@@ -28,7 +28,7 @@ dependencies:
   shared_preferences: ^0.5.6+3
   sqflite: "^1.2.1"
   share: 0.5.3
-  http: any
+  http: any 
   cached_network_image: ^2.0.0
   flutter_custom_clippers: ^1.1.1
   flushbar: "^1.9.1"

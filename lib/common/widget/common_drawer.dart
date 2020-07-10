@@ -57,7 +57,7 @@ class CommonDrawer extends StatelessWidget {
                   style: tStyle,
                 ),
                 Spacer(),
-                if (showBadge)
+                // if (showBadge)
                   Material(
                     color: Colors.deepOrange,
                     elevation: 5.0,
