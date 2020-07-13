@@ -165,11 +165,13 @@ class LoginPage extends StatelessWidget {
                             dataResult[0]["content"]["lisensi"],
                             int.tryParse(dataResult[0]["content"]["profit"]),
                             1,
+                            dataResult[0]["content"]["kota"],
                           );
                           db.saveAccount(dataAccount);
                           print("Welcome "+ dataResult[0]["content"]["nama"].toString());
                           SharedPreferences prefs = await SharedPreferences.getInstance();
                           prefs.setString('sessionEmail',_emailController.text);
+                          prefs.setString('sessionNama',_emailController.text);
                           Navigator.push(
                           context, MaterialPageRoute(builder: (context) => MainPage()));
 

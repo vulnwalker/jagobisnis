@@ -1,4 +1,4 @@
-#Fri Jul 10 16:32:04 WIB 2020
+#Mon Jul 13 16:29:43 WIB 2020
 base.0=/home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

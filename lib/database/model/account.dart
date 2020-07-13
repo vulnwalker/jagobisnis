@@ -10,7 +10,8 @@ class Account {
   String _nomor_rekening;
   int _saldo,_profit,_jumlah_barang;
   int _status;
-  Account(this._email, this._password, this._nama, this._nomor_telepon,this._jumlah_barang,this._nama_bank,this._nomor_rekening, this._nama_rekening, this._lisensi, this._profit,this._status);
+  String _kota;
+  Account(this._email, this._password, this._nama, this._nomor_telepon,this._jumlah_barang,this._nama_bank,this._nomor_rekening, this._nama_rekening, this._lisensi, this._profit,this._status, this._kota);
   Account.map(dynamic obj) {
     this._email = obj["email"];
     this._password = obj["password"];
@@ -23,6 +24,7 @@ class Account {
     this._lisensi = obj["lisensi"];
     this._profit = obj["profit"];
     this._status = obj["status"];
+    this._kota = obj["kota"];
   }
   String get accountEmail => _email;
   String get accountPassword => _password;
@@ -45,6 +47,7 @@ class Account {
     map["lisensi"] = this._lisensi;
     map["profit"] = this._profit;
     map["status"] = this._status;
+    map["kota"] = this._kota;
     return map;
   }
   void setAccountId(int id) {

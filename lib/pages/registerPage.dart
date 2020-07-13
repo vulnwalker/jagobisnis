@@ -24,6 +24,7 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _passwordController = new TextEditingController();
   final TextEditingController _emailController = new TextEditingController();
   final TextEditingController _confirmPasswordController = new TextEditingController();
+  final TextEditingController _referalEmail = new TextEditingController();
   Widget _buildPageContent(BuildContext context) {
     return Container(
       color: Colors.blue.shade100,
@@ -157,6 +158,21 @@ class RegisterPage extends StatelessWidget {
                         )
                       ),
                       Container(child: Divider(color: Colors.blue.shade400,), padding: EdgeInsets.only(left: 20.0,right: 20.0, bottom: 10.0),),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20.0),
+                        child: TextField(
+                          controller: _referalEmail,
+                          style: TextStyle(color: Colors.blue),
+                          // obscureText: true,
+                          decoration: InputDecoration(
+                            hintText: "Referal Email",
+                            hintStyle: TextStyle(color: Colors.blue.shade200),
+                            border: InputBorder.none,
+                            icon: Icon(Icons.alternate_email, color: Colors.blue,)
+                          ),
+                        )
+                      ),
+                      Container(child: Divider(color: Colors.blue.shade400,), padding: EdgeInsets.only(left: 20.0,right: 20.0, bottom: 10.0),),
                       SizedBox(height: 10.0,),
                       
                     ],
@@ -174,7 +190,7 @@ class RegisterPage extends StatelessWidget {
                 ],
               ),
               Container(
-                height: 580,
+                height: 660,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: RaisedButton(
@@ -185,8 +201,9 @@ class RegisterPage extends StatelessWidget {
                         "password": _passwordController.text,
                         "confirmPassword": _confirmPasswordController.text,
                         "nama": _namaController.text,
-                        "nomorWhatsApp": _nomorWhatsAppController.text,
-                        "email": _emailController.text,
+                        "nomorTelepon": _nomorWhatsAppController.text,
+                        "kota": _kotaController.text,
+                        "referalEmail": _referalEmail.text,
                       }).then((response) async {
                         configClass.closeLoading(context);
                     
@@ -220,9 +237,13 @@ class RegisterPage extends StatelessWidget {
                       dataResult[0]["content"]["lisensi"],
                       int.tryParse(dataResult[0]["content"]["profit"]),
                       1,
+                      dataResult[0]["content"]["kota"],
                     );
                     db.saveAccount(dataAccount);
                     print("Welcome "+ dataResult[0]["content"]["nama"].toString());
+                    SharedPreferences prefs = await SharedPreferences.getInstance();
+                          prefs.setString('sessionEmail',_emailController.text);
+                          prefs.setString('sessionNama',_emailController.text);
                     Navigator.push(
                     context, MaterialPageRoute(builder: (context) => MainPage()));
 
