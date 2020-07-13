@@ -172,6 +172,7 @@ class LoginPage extends StatelessWidget {
                           SharedPreferences prefs = await SharedPreferences.getInstance();
                           prefs.setString('sessionEmail',_emailController.text);
                           prefs.setString('sessionNama',_emailController.text);
+                          prefs.setString('sessionGambar',dataResult[0]["content"]["foto"]);
                           Navigator.push(
                           context, MaterialPageRoute(builder: (context) => MainPage()));
 

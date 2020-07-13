@@ -4,6 +4,7 @@ import 'package:jagobisnis/pages/dashboarPage.dart';
 import 'package:jagobisnis/pages/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jagobisnis/pages/profilePage.dart';
 
 
 void main() => runApp(MyApp());
@@ -26,8 +27,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         "login": (BuildContext context) => LoginPage(),
         "dashboardPage": (BuildContext context) => MainPage(),
-        // "register": (BuildContext context) => SignUpPage(),
-        // "profile": (BuildContext context) => Profile(),
+        "profile": (BuildContext context) => Profile(),
         // "membership": (BuildContext context) => MemberShip(),
         // "welcomePage": (BuildContext context) => WelcomePage(),
         // "produkPage": (BuildContext context) => ProdukPage(),

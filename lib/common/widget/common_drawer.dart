@@ -58,28 +58,28 @@ class CommonDrawer extends StatelessWidget {
                 ),
                 Spacer(),
                 // if (showBadge)
-                  Material(
-                    color: Colors.deepOrange,
-                    elevation: 5.0,
-                    shadowColor: Colors.red,
-                    borderRadius: BorderRadius.circular(5.0),
-                    child: Container(
-                      width: 25,
-                      height: 25,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.deepOrange,
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Text(
-                        "10+",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  )
+                  // Material(
+                  //   color: Colors.deepOrange,
+                  //   elevation: 5.0,
+                  //   shadowColor: Colors.red,
+                  //   borderRadius: BorderRadius.circular(5.0),
+                  //   child: Container(
+                  //     width: 25,
+                  //     height: 25,
+                  //     alignment: Alignment.center,
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.deepOrange,
+                  //       borderRadius: BorderRadius.circular(5.0),
+                  //     ),
+                  //     // child: Text(
+                  //     //   "10+",
+                  //     //   style: TextStyle(
+                  //     //       color: Colors.white,
+                  //     //       fontSize: 12.0,
+                  //     //       fontWeight: FontWeight.bold),
+                  //     // ),
+                  //   ),
+                  // )
               ]),
       )
       
@@ -129,7 +129,8 @@ class CommonDrawer extends StatelessWidget {
                             colors: [Colors.orange, Colors.deepOrange])),
                     child: CircleAvatar(
                       radius: 40,
-                      backgroundImage: NetworkImage(prefs.getString('sessionGambar').toString()),
+                      // backgroundImage: NetworkImage(prefs.getString('sessionGambar').toString()),
+                      backgroundImage: NetworkImage("http://member.jagobisnis.info/assets/images/profile/zackzack.png"),
          
                       // backgroundImage: CachedNetworkImageProvider(image),
                     ),
@@ -147,25 +148,25 @@ class CommonDrawer extends StatelessWidget {
                     style: TextStyle(color: active, fontSize: 16.0),
                   ),
                   SizedBox(height: 30.0),
-                  _buildRow(Icons.dashboard, "Dashboard","mainPage"),
+                  _buildRow(Icons.dashboard, "Dashboard","dashboardPage"),
                   // _buildDivider(),
                   // _buildRow(Icons.traffic, "Trafic",""),
                   // _buildRow(Icons.notifications, "Notifications",showBadge: true),
                   _buildDivider(),
                   _buildRow(Icons.person, "Profile","profile"),
                   _buildDivider(),
-                  _buildRow(Icons.group_work, "My Leads","leadPage"),
-                  _buildDivider(),
+                  // _buildRow(Icons.group_work, "My Leads","leadPage"),
+                  // _buildDivider(),
                   _buildRow(Icons.card_membership, "Membership","membership"),
                   _buildDivider(),
                   _buildRow(Icons.watch, "Training","trainingPage"),
                   _buildDivider(),
-                  _buildRow(Icons.pages, "Copywriting","copyWritingPage"),
-                  _buildDivider(),
-                  _buildRow(Icons.shop, "Shop","produkPage"),
-                  _buildDivider(),
-                  _buildRow(Icons.payment, "Invoice","invoicePage"),
-                  _buildDivider(),
+                  // _buildRow(Icons.pages, "Copywriting","copyWritingPage"),
+                  // _buildDivider(),
+                  // _buildRow(Icons.shop, "Shop","produkPage"),
+                  // _buildDivider(),
+                  // _buildRow(Icons.payment, "Invoice","invoicePage"),
+                  // _buildDivider(),
                 ],
               ),
             ),
