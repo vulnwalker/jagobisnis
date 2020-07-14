@@ -5,6 +5,7 @@ import 'package:jagobisnis/pages/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jagobisnis/pages/profilePage.dart';
+import 'package:jagobisnis/pages/trainingPage.dart';
 
 
 void main() => runApp(MyApp());
@@ -28,6 +29,8 @@ class MyApp extends StatelessWidget {
         "login": (BuildContext context) => LoginPage(),
         "dashboardPage": (BuildContext context) => MainPage(),
         "profile": (BuildContext context) => Profile(),
+        "trainingPage": (BuildContext context) => TrainingPage(),
+
         // "membership": (BuildContext context) => MemberShip(),
         // "welcomePage": (BuildContext context) => WelcomePage(),
         // "produkPage": (BuildContext context) => ProdukPage(),
@@ -37,7 +40,6 @@ class MyApp extends StatelessWidget {
         // "cartPage": (BuildContext context) => CartPage(),
         // "checkoutPage": (BuildContext context) => CheckoutPage(),
         // "invoicePage": (BuildContext context) => InvoicePage(),
-        // "trainingPage": (BuildContext context) => TrainingPage(),
       },
     );
   }
