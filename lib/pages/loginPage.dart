@@ -85,6 +85,7 @@ class LoginPage extends StatelessWidget {
                         child: TextField(
                           controller: this._passController,
                           style: TextStyle(color: Colors.blue),
+                          obscureText: true,
                           decoration: InputDecoration(
                             hintText: "Password",
                             hintStyle: TextStyle(color: Colors.blue.shade200),
