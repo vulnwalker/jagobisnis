@@ -184,6 +184,10 @@ class ProfileState extends State<Profile> {
     }else {
       warnaStatus = Colors.greenAccent;
     }
+    final Color color1 = Colors.blue;
+    final Color color2 = Colors.blue.shade200;
+    final Color color3 = Colors.blue.shade400;
+    final Color color4 = Colors.blueGrey;
   
     return SingleChildScrollView(
       
@@ -191,18 +195,34 @@ class ProfileState extends State<Profile> {
               Stack(
                 children: <Widget>[
                   Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [color3, color4],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter)),
+            ),
+            Container(
+              height: 450,
+              width: 300,
+              decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(30)),
+                  color: color2),
+            ),
+            Container(
+              height: 100,
+              width: 80,
+              decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(30)),
+                  color: color1),
+            ),
+                  Container(
                     width: double.infinity,
                     height: 330,
-                    color: Colors.deepOrange,
+                    color: color1,
                   ),
-                  Positioned(
-                    top: 10,
-                    right: 30,
-                    child: Icon(
-                      Icons.settings,
-                      color: Colors.white,
-                    ),
-                  ),
+                  
                   Column(
                     children: <Widget>[
                       Container(
@@ -253,65 +273,65 @@ class ProfileState extends State<Profile> {
                                 ],
                               ),
                             ),
-                      Container(
-                        margin: EdgeInsets.only(top: 77),
-                        padding: EdgeInsets.all(10),
-                        child: Card(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              Column(
-                                children: <Widget>[
-                                  Container(
-                                      padding:
-                                          EdgeInsets.only(top: 15, bottom: 5),
-                                      child: Text("Photos",
-                                          style: TextStyle(
-                                              color: Colors.black54))),
-                                  Container(
-                                      padding: EdgeInsets.only(bottom: 15),
-                                      child: Text("5,000",
-                                          style: TextStyle(
-                                              color: Colors.black87,
-                                              fontSize: 16))),
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  Container(
-                                      padding:
-                                          EdgeInsets.only(top: 15, bottom: 5),
-                                      child: Text("Followers",
-                                          style: TextStyle(
-                                              color: Colors.black54))),
-                                  Container(
-                                      padding: EdgeInsets.only(bottom: 15),
-                                      child: Text("5,000",
-                                          style: TextStyle(
-                                              color: Colors.black87,
-                                              fontSize: 16))),
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  Container(
-                                      padding:
-                                          EdgeInsets.only(top: 10, bottom: 5),
-                                      child: Text("Followings",
-                                          style: TextStyle(
-                                              color: Colors.black54))),
-                                  Container(
-                                      padding: EdgeInsets.only(bottom: 10),
-                                      child: Text("5,000",
-                                          style: TextStyle(
-                                              color: Colors.black87,
-                                              fontSize: 16))),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      // Container(
+                      //   margin: EdgeInsets.only(top: 77),
+                      //   padding: EdgeInsets.all(10),
+                      //   child: Card(
+                      //     child: Row(
+                      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      //       children: <Widget>[
+                      //         Column(
+                      //           children: <Widget>[
+                      //             Container(
+                      //                 padding:
+                      //                     EdgeInsets.only(top: 15, bottom: 5),
+                      //                 child: Text("Photos",
+                      //                     style: TextStyle(
+                      //                         color: Colors.black54))),
+                      //             Container(
+                      //                 padding: EdgeInsets.only(bottom: 15),
+                      //                 child: Text("5,000",
+                      //                     style: TextStyle(
+                      //                         color: Colors.black87,
+                      //                         fontSize: 16))),
+                      //           ],
+                      //         ),
+                      //         Column(
+                      //           children: <Widget>[
+                      //             Container(
+                      //                 padding:
+                      //                     EdgeInsets.only(top: 15, bottom: 5),
+                      //                 child: Text("Followers",
+                      //                     style: TextStyle(
+                      //                         color: Colors.black54))),
+                      //             Container(
+                      //                 padding: EdgeInsets.only(bottom: 15),
+                      //                 child: Text("5,000",
+                      //                     style: TextStyle(
+                      //                         color: Colors.black87,
+                      //                         fontSize: 16))),
+                      //           ],
+                      //         ),
+                      //         Column(
+                      //           children: <Widget>[
+                      //             Container(
+                      //                 padding:
+                      //                     EdgeInsets.only(top: 10, bottom: 5),
+                      //                 child: Text("Followings",
+                      //                     style: TextStyle(
+                      //                         color: Colors.black54))),
+                      //             Container(
+                      //                 padding: EdgeInsets.only(bottom: 10),
+                      //                 child: Text("5,000",
+                      //                     style: TextStyle(
+                      //                         color: Colors.black87,
+                      //                         fontSize: 16))),
+                      //           ],
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
       padding: EdgeInsets.all(10),
       child: Column(
