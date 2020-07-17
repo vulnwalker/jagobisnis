@@ -32,6 +32,9 @@ class ConfigClass {
   String trainingList(){
     return getHostName()+"training";
   }
+  String trainingListChapter(){
+    return getHostName()+"chapter";
+  }
   String register(){
     return getHostName()+"member/add";
   }

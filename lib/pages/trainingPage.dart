@@ -6,10 +6,17 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:intl/intl.dart';
 
 import 'package:jagobisnis/common/assets.dart';
+import 'package:jagobisnis/common/config.dart';
 import 'package:jagobisnis/common/widget/common_scaffold.dart';
+import 'package:jagobisnis/database/DatabaseHelper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as JSON;
 // import 'package:jagobisnis/src/pages/food/recipe_single.dart';
+ConfigClass configClass = new ConfigClass();
 
 class TrainingPage extends StatelessWidget {
   static final String path = "lib/src/pages/food/recipe_list.dart";
@@ -22,6 +29,8 @@ class TrainingPage extends StatelessWidget {
   final Color color2 = Colors.blue.shade200;
   final Color color3 = Colors.blue.shade400;
   final Color color4 = Colors.blueGrey;
+  var db = new DatabaseHelper();
+
   final List<String> images = [
     breakfast,
     burger,
@@ -38,7 +47,31 @@ class TrainingPage extends StatelessWidget {
         appTitle: "Training Centre",
         showDrawer: true,
         showFAB: false,
-        bodyData: Stack(
+        bodyData: FutureBuilder(
+              future: getListChapter(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  // var extractdata = jsonDecode(snapshot.data);
+                  //   List dataResult;
+                  //   dataResult = extractdata["result"];
+                  //   namaProduk =  dataResult[0]["content"][0]['nama_produk'].toString();
+                  //   deskripsiProduk =  dataResult[0]["content"][0]['deskripsi'].toString();
+                  //   hargaProduk =  dataResult[0]["content"][0]['harga'].toString();
+                  //   mainImage =  dataResult[0]["content"][0]['main_image'].toString();
+                  //   profitProduk =  dataResult[0]["content"][0]['profit'].toString();
+                  //   sourceMedia = jsonDecode(dataResult[0]["content"][0]['media'].toString());
+                  return template(snapshot.data);
+                } else {
+                  return Center (
+                      child: CircularProgressIndicator()
+                  );
+                }
+              },
+            ),
+        );
+  }
+  Widget template(BuildContext context){
+    return Stack(
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
@@ -149,9 +182,8 @@ class TrainingPage extends StatelessWidget {
               ),
             )
           ],
-        ));
+        );
   }
-
   Widget _buildItem(BuildContext context, index, {bool large = false}) {
     return GestureDetector(
       onTap: (){
@@ -189,6 +221,149 @@ class TrainingPage extends StatelessWidget {
       ),
     );
   }
+
+  Future<Stack> getListChapter() async {
+     SharedPreferences prefs = await SharedPreferences.getInstance();
+     var dbClient = await db.db;
+     var listWidget = <Widget>[];
+     final formatter = new NumberFormat("#,###");
+
+      await http.post(configClass.trainingListChapter(), body: {"email" : prefs.getString('sessionEmail').toString() }).then((response) {
+        var extractdata = JSON.jsonDecode(response.body);
+        List dataResult;
+        String err,cek;
+        dataResult = extractdata["result"];
+        List<dynamic> dataContent = dataResult[0]["content"];
+       
+        for (var i = 0; i < dataContent.length; i++) {
+          // listWidget.add( );    
+              // dataContent[i]['id_member'].toString(),
+            
+          
+        }
+          
+
+        
+      });
+       
+       
+     
+     
+     
+ 
+    return Stack(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [color3, color4],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter)),
+            ),
+            Container(
+              height: 450,
+              width: 300,
+              decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(30)),
+                  color: color2),
+            ),
+            Container(
+              height: 100,
+              width: 80,
+              decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(30)),
+                  color: color1),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(height: 20.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: 
+                            OutlineButton(
+                              color: Colors.white,
+                              textColor: Colors.white,
+                              borderSide: BorderSide(color: Colors.white),
+                              child: Text("Chapter 1".toUpperCase()),
+                              onPressed: () {},
+                            ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Container(
+                    height: 230,
+                    child: ListView.builder(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: OutlineButton(
+                              color: Colors.white,
+                              textColor: Colors.white,
+                              borderSide: BorderSide(color: Colors.white),
+                              child: Text("Chapter 2".toUpperCase()),
+                              onPressed: () {},
+                            ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Container(
+                    height: 230,
+                    child: ListView.builder(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  SizedBox(height: 20.0),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: OutlineButton(
+                              color: Colors.white,
+                              textColor: Colors.white,
+                              borderSide: BorderSide(color: Colors.white),
+                              child: Text("Chapter 2".toUpperCase()),
+                              onPressed: () {},
+                            ),
+                  ),
+                  SizedBox(height: 20.0),
+                  Container(
+                    height: 230,
+                    child: ListView.builder(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
+                    ),
+                  ),
+                  SizedBox(height: 40.0),
+                ],
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+
+              child: TextField(
+                decoration: InputDecoration(
+                  fillColor: Colors.black87,
+                  suffixIcon: Icon(Icons.search, color: Colors.white70,),
+                  filled: true,
+                  hintText: "Cari materi",
+                  hintStyle: TextStyle(color: Colors.white70)
+                ),
+              ),
+            )
+          ],
+        );
+   }
 
   
 }

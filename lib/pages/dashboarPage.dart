@@ -172,7 +172,7 @@ class MainPageState extends State<MainPage> {
                         borderRadius: BorderRadius.circular(5.0)
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 4.0,right: 4.0),
+                        padding: const EdgeInsets.only(left: 8.0,right: 8.0),
                         child: 
                                 OutlineButton(
                                   color: Colors.green,
@@ -186,13 +186,13 @@ class MainPageState extends State<MainPage> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(4.0, 0,4.0,16.0),
+                      margin: EdgeInsets.fromLTRB(35.0, 0,4.0,16.0),
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(5.0)
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0,right: 4.0),
+                        padding: const EdgeInsets.only(left: 8.0,right: 8.0),
                         child: 
                                 OutlineButton(
                                   color: Colors.white,
