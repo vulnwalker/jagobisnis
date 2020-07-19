@@ -60,7 +60,7 @@ class TrainingPage extends StatelessWidget {
                   //   mainImage =  dataResult[0]["content"][0]['main_image'].toString();
                   //   profitProduk =  dataResult[0]["content"][0]['profit'].toString();
                   //   sourceMedia = jsonDecode(dataResult[0]["content"][0]['media'].toString());
-                  return template(snapshot.data);
+                  return template(context,snapshot.data);
                 } else {
                   return Center (
                       child: CircularProgressIndicator()
@@ -70,119 +70,8 @@ class TrainingPage extends StatelessWidget {
             ),
         );
   }
-  Widget template(BuildContext context){
-    return Stack(
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [color3, color4],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter)),
-            ),
-            Container(
-              height: 450,
-              width: 300,
-              decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.only(bottomRight: Radius.circular(30)),
-                  color: color2),
-            ),
-            Container(
-              height: 100,
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.only(bottomRight: Radius.circular(30)),
-                  color: color1),
-            ),
-            SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: 
-                            OutlineButton(
-                              color: Colors.white,
-                              textColor: Colors.white,
-                              borderSide: BorderSide(color: Colors.white),
-                              child: Text("Chapter 1".toUpperCase()),
-                              onPressed: () {},
-                            ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: OutlineButton(
-                              color: Colors.white,
-                              textColor: Colors.white,
-                              borderSide: BorderSide(color: Colors.white),
-                              child: Text("Chapter 2".toUpperCase()),
-                              onPressed: () {},
-                            ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: OutlineButton(
-                              color: Colors.white,
-                              textColor: Colors.white,
-                              borderSide: BorderSide(color: Colors.white),
-                              child: Text("Chapter 2".toUpperCase()),
-                              onPressed: () {},
-                            ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 40.0),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-
-              child: TextField(
-                decoration: InputDecoration(
-                  fillColor: Colors.black87,
-                  suffixIcon: Icon(Icons.search, color: Colors.white70,),
-                  filled: true,
-                  hintText: "Cari materi",
-                  hintStyle: TextStyle(color: Colors.white70)
-                ),
-              ),
-            )
-          ],
-        );
+  Widget template(BuildContext context, Stack stack){
+    return stack;
   }
   Widget _buildItem(BuildContext context, index, {bool large = false}) {
     return GestureDetector(
@@ -234,13 +123,81 @@ class TrainingPage extends StatelessWidget {
         String err,cek;
         dataResult = extractdata["result"];
         List<dynamic> dataContent = dataResult[0]["content"];
-       
+        listWidget.add( SizedBox(height: 20.0),);    
         for (var i = 0; i < dataContent.length; i++) {
-          // listWidget.add( );    
               // dataContent[i]['id_member'].toString(),
+              listWidget.add(Padding(
+                    padding: const EdgeInsets.only(left: 16.0,top:10.0),
+                    child: 
+                            OutlineButton(
+                              color: Colors.white,
+                              textColor: Colors.white,
+                              borderSide: BorderSide(color: Colors.white),
+                              child: Text(dataContent[i]["nama_chapter"].toUpperCase()),
+                              onPressed: () {},
+                            ),
+                  )
+              );
+              listWidget.add(SizedBox(height: 10.0));
+              List materiContent = dataContent[i]["detail_materi"];
+              // print(materiContent[0]["judul_materi"].toString() + " halloo" );
+              var listMateri = <Widget>[];
+              
+              for (var ab = 0; ab < materiContent.length; ab++) {
+                listMateri.add(
+                  GestureDetector(
+                      onTap: (){
+                        // Navigator.push(context, MaterialPageRoute(
+                        //   builder: (_) => RecipeSinglePage()
+                        // ));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(right: 20),
+                        width: 300 ,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                  image: DecorationImage(
+                                    image: CachedNetworkImageProvider(
+                                      materiContent[ab]["thumbnail"] ,
+                                    ),
+                                    fit: BoxFit.fill,
+                                  )),
+                              height: 180 ,
+                            ),
+                            SizedBox(height: 10.0),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0,),
+                              child: Text(
+                                materiContent[ab]["judul_materi"],
+                                style: TextStyle(color: Colors.white, fontSize: 14.0),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                );
+
+
+              }
+              listWidget.add(
+                Container(
+                    height: 230,
+                    child: ListView(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      scrollDirection: Axis.horizontal,
+                      children: listMateri
+                      // itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
+                    ),
+                  ),
+              );
             
           
-        }
+      }
           
 
         
@@ -279,71 +236,7 @@ class TrainingPage extends StatelessWidget {
             SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: 
-                            OutlineButton(
-                              color: Colors.white,
-                              textColor: Colors.white,
-                              borderSide: BorderSide(color: Colors.white),
-                              child: Text("Chapter 1".toUpperCase()),
-                              onPressed: () {},
-                            ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: OutlineButton(
-                              color: Colors.white,
-                              textColor: Colors.white,
-                              borderSide: BorderSide(color: Colors.white),
-                              child: Text("Chapter 2".toUpperCase()),
-                              onPressed: () {},
-                            ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  SizedBox(height: 20.0),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: OutlineButton(
-                              color: Colors.white,
-                              textColor: Colors.white,
-                              borderSide: BorderSide(color: Colors.white),
-                              child: Text("Chapter 2".toUpperCase()),
-                              onPressed: () {},
-                            ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 230,
-                    child: ListView.builder(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) =>  _buildItem(context, index, large:  true),
-                    ),
-                  ),
-                  SizedBox(height: 40.0),
-                ],
+                children: listWidget 
               ),
             ),
             Positioned(
