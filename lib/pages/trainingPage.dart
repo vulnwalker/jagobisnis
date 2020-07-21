@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 /**
  * Author: Damodar Lohani
  * profile: https://github.com/lohanidamodar
@@ -10,6 +13,7 @@ import 'package:intl/intl.dart';
 
 import 'package:jagobisnis/common/assets.dart';
 import 'package:jagobisnis/common/config.dart';
+import 'package:jagobisnis/common/toast/alert_dialog.dart';
 import 'package:jagobisnis/common/widget/common_scaffold.dart';
 import 'package:jagobisnis/database/DatabaseHelper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,8 +44,11 @@ class TrainingPage extends StatelessWidget {
     meal,
     pancake,
   ];
+  BuildContext publicContext;
   @override
   Widget build(BuildContext context) {
+
+    publicContext = context;
     return CommonScaffold(
         // scaffoldKey: scaffoldKey,
         appTitle: "Training Centre",
@@ -110,9 +117,25 @@ class TrainingPage extends StatelessWidget {
       ),
     );
   }
-
+  _customAlertDialog(BuildContext context, AlertDialogType type, String titleAlert,String descAlert) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CustomAlertDialog(
+          type: type,
+          title: titleAlert,
+          content: descAlert,
+        );
+      },
+    );
+  }
   Future<Stack> getListChapter() async {
      SharedPreferences prefs = await SharedPreferences.getInstance();
+    // Uint8List base64Decode(String source) => base64.decode(source);
+    Codec<String, String> stringToBase64 = utf8.fuse(base64);
+    // String encoded = stringToBase64.encode(credentials);      // dXNlcm5hbWU6cGFzc3dvcmQ=
+    // String decoded = stringToBase64.decode(encoded);          
+
      var dbClient = await db.db;
      var listWidget = <Widget>[];
      final formatter = new NumberFormat("#,###");
@@ -134,10 +157,20 @@ class TrainingPage extends StatelessWidget {
                               textColor: Colors.white,
                               borderSide: BorderSide(color: Colors.white),
                               child: Text(dataContent[i]["nama_chapter"].toUpperCase()),
-                              onPressed: () {},
+                              onPressed: () {
+                                _customAlertDialog(publicContext, AlertDialogType.INFO, dataContent[i]["nama_chapter"], dataContent[i]["judul"]);
+
+                              },
                             ),
                   )
               );
+              listWidget.add(Padding(
+                    padding: const EdgeInsets.only(left: 16.0,top:5.0),
+                    child: Text(dataContent[i]["judul"].toUpperCase(), style: TextStyle(color: Colors.yellowAccent, fontSize: 20,fontWeight: FontWeight.bold),),
+                              
+                  ));
+
+
               listWidget.add(SizedBox(height: 10.0));
               List materiContent = dataContent[i]["detail_materi"];
               // print(materiContent[0]["judul_materi"].toString() + " halloo" );
@@ -150,6 +183,8 @@ class TrainingPage extends StatelessWidget {
                         // Navigator.push(context, MaterialPageRoute(
                         //   builder: (_) => RecipeSinglePage()
                         // ));
+                        
+                        _customAlertDialog(publicContext, AlertDialogType.INFO, materiContent[ab]["judul_materi"], stringToBase64.decode(materiContent[ab]["deskripsi_materi"].toString()));
                       },
                       child: Container(
                         margin: EdgeInsets.only(right: 20),
