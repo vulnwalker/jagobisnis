@@ -16,6 +16,7 @@ import 'package:jagobisnis/common/config.dart';
 import 'package:jagobisnis/common/toast/alert_dialog.dart';
 import 'package:jagobisnis/common/widget/common_scaffold.dart';
 import 'package:jagobisnis/database/DatabaseHelper.dart';
+import 'package:jagobisnis/pages/detailTraining.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as JSON;
@@ -180,11 +181,23 @@ class TrainingPage extends StatelessWidget {
                 listMateri.add(
                   GestureDetector(
                       onTap: (){
-                        // Navigator.push(context, MaterialPageRoute(
-                        //   builder: (_) => RecipeSinglePage()
-                        // ));
-                        
-                        _customAlertDialog(publicContext, AlertDialogType.INFO, materiContent[ab]["judul_materi"], stringToBase64.decode(materiContent[ab]["deskripsi_materi"].toString()));
+                        Navigator.push(
+                                publicContext,
+                        new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              new DetailTrainingPage(
+                                materiContent[ab]["id"],
+                                materiContent[ab]["judul_materi"],
+                                stringToBase64.decode(materiContent[ab]["deskripsi_materi"].toString()),
+                                materiContent[ab]["video_souce"],
+                                materiContent[ab]["thumbnail"],
+                                materiContent[ab]["durasi_video"],
+                                materiContent[ab]["youtube_source"],
+                                materiContent[ab]["status"],
+                                ),
+                        ));
+                
+                        // _customAlertDialog(publicContext, AlertDialogType.INFO, materiContent[ab]["judul_materi"], stringToBase64.decode(materiContent[ab]["deskripsi_materi"].toString()));
                       },
                       child: Container(
                         margin: EdgeInsets.only(right: 20),
