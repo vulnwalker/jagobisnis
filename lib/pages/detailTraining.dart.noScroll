@@ -63,12 +63,15 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
   }
   @override
   Widget build(BuildContext context){
-    final ScrollController _scrollController = ScrollController();
+    
+
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-              top: 0,
+      body:   Container(
+        height: double.infinity,
+        child:  Stack(
+          children: <Widget>[
+            Positioned(
+              top: 260,
               left: 0,
               right: 0,
               bottom: 0,
@@ -84,7 +87,7 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
               )
             ),
             Positioned(
-              top: 0,
+              top: 260,
               left: 0,
               right: 150,
               bottom: 80,
@@ -98,69 +101,85 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
                 ),
               )
             ),
-            Scrollbar(
-              // isAlwaysShown: true,
-              controller: _scrollController,
-              child: ListView(
-                children: <Widget>[
-                  Container(
-                    height: 240,
-                    alignment: Alignment.topCenter,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38,
-                          blurRadius: 30.0
-                        )
-                      ]
-                    ),
-                    child: SizedBox(
-                      height: 260,
-                      child: 
-                      FijkView(
-                        player: player,
-                        fit: FijkFit.fill
-                        ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(16,0,16,0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          padding: const EdgeInsets.fromLTRB(200,0,0,10),
-                          child: RaisedButton(
-                            child: Text(widget.namaChapter.toUpperCase()),
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-                            onPressed: (){
-                              // Navigator.push(context, MaterialPageRoute(
-                              //   builder: (_) => RecipeDetailsPage()
-                              // ));
-                            },
-                          ),
-                        ),
-                        Text(widget.judulMateri.toUpperCase(), style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 30.0
-                        ),),
-                        SizedBox(height: 20.0),
-                        Text(widget.deskripsiMateri, style: TextStyle(color: Colors.white70),),
-                      
-                      ],
-                    ),
+            
+            Positioned(
+              top: 250,
+              left: 0,
+              right: 0,
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                   
+                    SizedBox(height: 40.0),
+                    Text(widget.judulMateri.toUpperCase(), style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30.0
+                    ),),
+                    SizedBox(height: 20.0),
+                    Text(widget.deskripsiMateri, style: TextStyle(color: Colors.white70),),
+                   
+                  ],
+                ),
+                )
+            ),
+            Container(
+              height: 290,
+              alignment: Alignment.topCenter,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black38,
+                    blurRadius: 30.0
                   )
-
                 ]
-              )
-            )
-
-        ],
+              ),
+              child: SizedBox(
+                height: 260,
+                child: 
+                 FijkView(
+                   player: player,
+                   fit: FijkFit.fill
+                   ),
+                // PNetworkImage(widget.thumbnail, fit: BoxFit.fill,),
+              ),
+            ),
+            // Positioned(
+            //   top: 295,
+            //   left: 20,
+            //   child: CircleAvatar(
+            //     backgroundColor: Colors.white,
+            //     radius: 25,
+            //     child: IconButton(
+            //       color: icon,
+            //       onPressed: (){},
+            //       icon: Icon(Icons.play_arrow,)),
+            //   ),
+            // ),
+            Positioned(
+              top: 250,
+              right: 20,
+              child: RaisedButton(
+                child: Text(widget.namaChapter.toUpperCase()),
+                color: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                onPressed: (){
+                  // Navigator.push(context, MaterialPageRoute(
+                  //   builder: (_) => RecipeDetailsPage()
+                  // ));
+                },
+              ),
+            ),
+            Container(height: 70.0, child: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            )),
+          ],
+        ),
       ),
     );
-    
     
   }
 }
