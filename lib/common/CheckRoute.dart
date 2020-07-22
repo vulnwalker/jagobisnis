@@ -49,7 +49,6 @@ class _CheckRouteState extends State<CheckRoute> {
           prefs.setString('sessionNama',dataResult[0]["content"][0]['nama'].toString());
           prefs.setString('sessionGambar',dataResult[0]["content"][0]['foto'].toString());
         });
-       
       }
     })();
   }

@@ -7,6 +7,8 @@ import 'package:jagobisnis/common/config.dart';
 import 'package:jagobisnis/common/widget/network_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:http/http.dart' as http;
 // import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 // import 'package:jagobisnis/common/plugins/youtube_player.dart';
 
@@ -40,26 +42,28 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
   final Color color4 = Colors.blueGrey;
   final FijkPlayer player = FijkPlayer(
   );
-//   YoutubePlayerController _controller = YoutubePlayerController(
-//     initialVideoId: 'oZvheuVm_mw',
-//     flags: YoutubePlayerFlags(
-//         autoPlay: true,
-//         mute: true,
-//     ),
-// );
-
-//  String videoId = YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=oZvheuVm_mw");
+  YoutubePlayerController _controller;
+  
   @override
   void initState() {
     super.initState();
-        player.setDataSource(
-        widget.videoSource,
-        autoPlay: true);
+    _controller = YoutubePlayerController(
+      initialVideoId: widget.youtubeSource,
+      flags: YoutubePlayerFlags(
+        mute: false,
+        autoPlay: true,
+      ),
+    );
+    // player.setDataSource(
+    // widget.videoSource,
+    // autoPlay: true);
+
   }
   @override
   void dispose() {
     super.dispose();
-    player.release();
+    // player.release();
+    _controller.dispose();
   }
   @override
   Widget build(BuildContext context){
@@ -116,11 +120,21 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
                     ),
                     child: SizedBox(
                       height: 260,
-                      child: 
-                      FijkView(
-                        player: player,
-                        fit: FijkFit.fill
+                      child: FittedBox(
+                      fit: BoxFit.fill,
+                      child:
+                        YoutubePlayer(
+                          controller: _controller,
+                          showVideoProgressIndicator: true,
+                          onReady: () {
+                            print('Player is ready. ');
+                          },
                         ),
+                        // FijkView(
+                        //   player: player,
+                        //   fit: FijkFit.fill
+                        // ),
+                      )
                     ),
                   ),
                   Container(

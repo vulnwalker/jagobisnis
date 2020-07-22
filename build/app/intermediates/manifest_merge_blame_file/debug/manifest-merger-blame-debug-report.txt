@@ -69,13 +69,34 @@
 47-->/home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:28:13-30
 48
 49        <activity
-49-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
-50            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-50-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
-51            android:exported="false"
-51-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
-52            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-52-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
-53    </application>
-54
-55</manifest>
+49-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:47
+50            android:name="com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity"
+50-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-102
+51            android:configChanges="orientation|screenSize"
+51-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-59
+52            android:theme="@style/AppTheme" />
+52-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-44
+53        <activity
+53-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-15:55
+54            android:name="com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ChromeCustomTabsActivity"
+54-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-110
+55            android:configChanges="orientation|screenSize"
+55-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-59
+56            android:theme="@style/ThemeTransparent" />
+56-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-52
+57
+58        <receiver android:name="com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ActionBroadcastReceiver" />
+58-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-118
+58-->[:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:17:19-115
+59
+60        <activity
+60-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+61            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+61-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+62            android:exported="false"
+62-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+63            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+63-->[:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+64    </application>
+65
+66</manifest>
