@@ -194,6 +194,7 @@ class TrainingPage extends StatelessWidget {
                                 materiContent[ab]["durasi_video"],
                                 materiContent[ab]["youtube_source"],
                                 materiContent[ab]["status"],
+                                dataContent[i]["nama_chapter"],
                                 ),
                         ));
                 

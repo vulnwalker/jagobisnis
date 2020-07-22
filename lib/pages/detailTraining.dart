@@ -21,8 +21,9 @@ class DetailTrainingPage extends StatefulWidget {
  final String durasi_video;
  final String youtubeSource;
  final String status;
+ final String namaChapter;
 
-  DetailTrainingPage(this.idMateri,this.judulMateri,this.deskripsiMateri,this.videoSource,this.thumbnail,this.durasi_video,this.youtubeSource,this.status) ;
+  DetailTrainingPage(this.idMateri,this.judulMateri,this.deskripsiMateri,this.videoSource,this.thumbnail,this.durasi_video,this.youtubeSource,this.status,this.namaChapter) ;
   @override
   DetailTrainingPageState createState() => new DetailTrainingPageState();
 }
@@ -70,7 +71,7 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
         child:  Stack(
           children: <Widget>[
             Positioned(
-              top: 320,
+              top: 260,
               left: 0,
               right: 0,
               bottom: 0,
@@ -86,7 +87,7 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
               )
             ),
             Positioned(
-              top: 350,
+              top: 260,
               left: 0,
               right: 150,
               bottom: 80,
@@ -102,7 +103,7 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
             ),
             
             Positioned(
-              top: 310,
+              top: 250,
               left: 0,
               right: 0,
               child: Container(
@@ -119,34 +120,13 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
                     ),),
                     SizedBox(height: 20.0),
                     Text(widget.deskripsiMateri, style: TextStyle(color: Colors.white70),),
-                    // SizedBox(height: 50.0),
-                    // SizedBox(
-                    //   height: 30.0,
-                    //   width: double.infinity,
-                    //   child: Row(
-                    //     children: <Widget>[
-                    //       Icon(FontAwesomeIcons.fire, color: Colors.white),
-                    //       SizedBox(width: 5.0),
-                    //       Text("65%",style: TextStyle(color: Colors.white,fontSize: 18.0),),
-                    //       Spacer(),
-                    //       VerticalDivider(color: Colors.white),
-                    //       Spacer(),
-                    //       Text("Vegetarian",style: TextStyle(color: Colors.white, fontSize: 18.0),),
-                    //       Spacer(),
-                    //       VerticalDivider(color: Colors.white),
-                    //       Spacer(),
-                    //       Icon(FontAwesomeIcons.stopwatch, color: Colors.white),
-                    //       SizedBox(width: 5.0),
-                    //       Text("10 min",style: TextStyle(color: Colors.white, fontSize: 18.0),),
-                    //     ],
-                    //   ),
-                    // )
+                   
                   ],
                 ),
                 )
             ),
             Container(
-              height: 350,
+              height: 290,
               alignment: Alignment.topCenter,
               decoration: BoxDecoration(
                 boxShadow: [
@@ -157,7 +137,7 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
                 ]
               ),
               child: SizedBox(
-                height: 320,
+                height: 260,
                 child: 
                  FijkView(
                    player: player,
@@ -166,23 +146,23 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
                 // PNetworkImage(widget.thumbnail, fit: BoxFit.fill,),
               ),
             ),
+            // Positioned(
+            //   top: 295,
+            //   left: 20,
+            //   child: CircleAvatar(
+            //     backgroundColor: Colors.white,
+            //     radius: 25,
+            //     child: IconButton(
+            //       color: icon,
+            //       onPressed: (){},
+            //       icon: Icon(Icons.play_arrow,)),
+            //   ),
+            // ),
             Positioned(
-              top: 295,
-              left: 20,
-              child: CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 25,
-                child: IconButton(
-                  color: icon,
-                  onPressed: (){},
-                  icon: Icon(Icons.play_arrow,)),
-              ),
-            ),
-            Positioned(
-              top: 295,
+              top: 250,
               right: 20,
               child: RaisedButton(
-                child: Text("Chapter 1".toUpperCase()),
+                child: Text(widget.namaChapter.toUpperCase()),
                 color: Colors.white,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
                 onPressed: (){

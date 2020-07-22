@@ -3,6 +3,6 @@
 3    package="com.befovy.fijkplayer" >
 4
 5    <uses-sdk android:minSdkVersion="16" />
-5-->/home/kszxpo/flutter/.pub-cache/hosted/pub.dartlang.org/fijkplayer-0.8.7/android/src/main/AndroidManifest.xml
+5-->/usr/local/flutter/.pub-cache/hosted/pub.dartlang.org/fijkplayer-0.8.7/android/src/main/AndroidManifest.xml
 6
 7</manifest>
