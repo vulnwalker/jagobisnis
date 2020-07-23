@@ -451,7 +451,7 @@ class ProfileState extends State<Profile> {
           //               content: new Text("Reload Activity")
           //             );
           // showDialog(context: context,child: dialog);
-          Navigator.of(context).pushNamed(UIData.editProfileRoute);
+          Navigator.of(context).pushNamed("updateProfile");
         },
       );
 

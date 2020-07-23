@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/kszxpo/Development/Native/jagobisnis/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/root/.gradle/caches/transforms-2/files-2.1/ae13efc3dbae5c9ee58d4933337fcd21/coordinatorlayout-1.0.0/res/values/values.xml",
@@ -42,22 +42,22 @@
                     }
                 },
                 {
-                    "source": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/packaged_res/debug/values/values.xml",
+                    "source": "/home/kszxpo/Development/Native/jagobisnis/android/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,11,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,102,153,210,259,306,353,426,502",
-                        "endLines": "2,3,4,5,6,7,10,13,21",
-                        "endColumns": "46,50,56,48,46,46,12,12,12",
-                        "endOffsets": "97,148,205,254,301,348,421,497,949"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
                     },
                     "to": {
-                        "startLines": "293,294,295,296,297,302,310,1373,1683",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "19280,19327,19378,19435,19484,19814,20427,88427,112011",
-                        "endLines": "293,294,295,296,297,302,312,1375,1690",
-                        "endColumns": "46,50,56,48,46,46,12,12,12",
-                        "endOffsets": "19322,19373,19430,19479,19526,19856,20495,88498,112458"
+                        "startLines": "1376",
+                        "startColumns": "4",
+                        "startOffsets": "88503",
+                        "endLines": "1380",
+                        "endColumns": "12",
+                        "endOffsets": "88795"
                     }
                 },
                 {
@@ -80,22 +80,22 @@
                     }
                 },
                 {
-                    "source": "/home/kszxpo/MOBILE/jagobisnis/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/packaged_res/debug/values/values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
+                        "startLines": "2,3,4,5,6,7,8,11,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,102,153,210,259,306,353,426,502",
+                        "endLines": "2,3,4,5,6,7,10,13,21",
+                        "endColumns": "46,50,56,48,46,46,12,12,12",
+                        "endOffsets": "97,148,205,254,301,348,421,497,949"
                     },
                     "to": {
-                        "startLines": "1376",
-                        "startColumns": "4",
-                        "startOffsets": "88503",
-                        "endLines": "1380",
-                        "endColumns": "12",
-                        "endOffsets": "88795"
+                        "startLines": "293,294,295,296,297,302,310,1373,1683",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "19280,19327,19378,19435,19484,19814,20427,88427,112011",
+                        "endLines": "293,294,295,296,297,302,312,1375,1690",
+                        "endColumns": "46,50,56,48,46,46,12,12,12",
+                        "endOffsets": "19322,19373,19430,19479,19526,19856,20495,88498,112458"
                     }
                 },
                 {

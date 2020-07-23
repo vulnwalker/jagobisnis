@@ -47,8 +47,9 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
   @override
   void initState() {
     super.initState();
+    String idVideo = YoutubePlayer.convertUrlToId(widget.youtubeSource);
     _controller = YoutubePlayerController(
-      initialVideoId: widget.youtubeSource,
+      initialVideoId: idVideo,
       flags: YoutubePlayerFlags(
         mute: false,
         autoPlay: true,

@@ -1,18 +1,18 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
-MERGED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
-MERGED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-20:12
-MERGED from [:shared_preferences] /home/kszxpo/MOBILE/jagobisnis/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:sqflite] /home/kszxpo/MOBILE/jagobisnis/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
-MERGED from [:path_provider] /home/kszxpo/MOBILE/jagobisnis/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_rounded_progress_bar] /home/kszxpo/MOBILE/jagobisnis/build/flutter_rounded_progress_bar/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:share] /home/kszxpo/MOBILE/jagobisnis/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:fijkplayer] /home/kszxpo/MOBILE/jagobisnis/build/fijkplayer/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
+MERGED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
+MERGED from [:shared_preferences] /home/kszxpo/Development/Native/jagobisnis/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-20:12
+MERGED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:fijkplayer] /home/kszxpo/Development/Native/jagobisnis/build/fijkplayer/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:sqflite] /home/kszxpo/Development/Native/jagobisnis/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:share] /home/kszxpo/Development/Native/jagobisnis/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] /home/kszxpo/Development/Native/jagobisnis/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_rounded_progress_bar] /home/kszxpo/Development/Native/jagobisnis/build/flutter_rounded_progress_bar/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.webkit:webkit:1.2.0] /root/.gradle/caches/transforms-2/files-2.1/8a62ba38241af24f4b0566afddbc48f5/webkit-1.2.0/AndroidManifest.xml:17:1-24:12
@@ -44,29 +44,29 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /root/.gradle/caches/tran
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/bce9999f881bb3993a5b24e08740cbbf/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/6b1132090a8a1ffc60b82d3452ca52ad/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.befovy.fijkplayer:fijkplayer-full:0.7.6] /root/.gradle/caches/transforms-2/files-2.1/e82b51f94087f8e23e0c5d261bcd1136/fijkplayer-full-0.7.6/AndroidManifest.xml:2:1-9:12
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:2:5-41
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:2:5-41
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:1-30:12
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:1:11-69
 application
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:8:5-29:19
-MERGED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
-MERGED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
-MERGED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:8:5-29:19
+MERGED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
+MERGED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
+MERGED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/3a7eb299570065a3866b140e1a95969b/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
@@ -74,61 +74,61 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /root/.grad
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:10:9-35
 	android:icon
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:11:9-38
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:11:9-38
 	android:name
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:9:9-57
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:9:9-57
 activity#info.jagobisnis.jagobisnis.MainActivity
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:12:9-23:20
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:12:9-23:20
 	android:launchMode
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:14:13-43
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:14:13-43
 	android:hardwareAccelerated
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:17:13-47
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:17:13-47
 	android:windowSoftInputMode
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:18:13-55
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:18:13-55
 	android:configChanges
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:16:13-163
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:16:13-163
 	android:theme
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:15:13-47
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:15:13-47
 	android:name
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:13:13-41
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:13:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:19:13-22:29
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:20:17-68
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:20:17-68
 	android:name
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:21:17-76
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:21:17-76
 	android:name
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:21:27-74
 meta-data#flutterEmbedding
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:26:9-28:33
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:26:9-28:33
 	android:value
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:28:13-30
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:28:13-30
 	android:name
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml:27:13-44
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml:27:13-44
 uses-sdk
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml
-MERGED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /home/kszxpo/MOBILE/jagobisnis/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences] /home/kszxpo/MOBILE/jagobisnis/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:sqflite] /home/kszxpo/MOBILE/jagobisnis/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:sqflite] /home/kszxpo/MOBILE/jagobisnis/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /home/kszxpo/MOBILE/jagobisnis/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /home/kszxpo/MOBILE/jagobisnis/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_rounded_progress_bar] /home/kszxpo/MOBILE/jagobisnis/build/flutter_rounded_progress_bar/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_rounded_progress_bar] /home/kszxpo/MOBILE/jagobisnis/build/flutter_rounded_progress_bar/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:share] /home/kszxpo/MOBILE/jagobisnis/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:share] /home/kszxpo/MOBILE/jagobisnis/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:fijkplayer] /home/kszxpo/MOBILE/jagobisnis/build/fijkplayer/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:fijkplayer] /home/kszxpo/MOBILE/jagobisnis/build/fijkplayer/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences] /home/kszxpo/Development/Native/jagobisnis/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /home/kszxpo/Development/Native/jagobisnis/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:fijkplayer] /home/kszxpo/Development/Native/jagobisnis/build/fijkplayer/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:fijkplayer] /home/kszxpo/Development/Native/jagobisnis/build/fijkplayer/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /home/kszxpo/Development/Native/jagobisnis/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /home/kszxpo/Development/Native/jagobisnis/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /home/kszxpo/Development/Native/jagobisnis/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /home/kszxpo/Development/Native/jagobisnis/build/share/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /home/kszxpo/Development/Native/jagobisnis/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /home/kszxpo/Development/Native/jagobisnis/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_rounded_progress_bar] /home/kszxpo/Development/Native/jagobisnis/build/flutter_rounded_progress_bar/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_rounded_progress_bar] /home/kszxpo/Development/Native/jagobisnis/build/flutter_rounded_progress_bar/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] /root/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -191,43 +191,43 @@ MERGED from [androidx.print:print:1.0.0] /root/.gradle/caches/transforms-2/files
 MERGED from [androidx.print:print:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/6b1132090a8a1ffc60b82d3452ca52ad/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.befovy.fijkplayer:fijkplayer-full:0.7.6] /root/.gradle/caches/transforms-2/files-2.1/e82b51f94087f8e23e0c5d261bcd1136/fijkplayer-full-0.7.6/AndroidManifest.xml:5:5-7:41
 MERGED from [com.befovy.fijkplayer:fijkplayer-full:0.7.6] /root/.gradle/caches/transforms-2/files-2.1/e82b51f94087f8e23e0c5d261bcd1136/fijkplayer-full-0.7.6/AndroidManifest.xml:5:5-7:41
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml
-INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml:6:5-66
+ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from /home/kszxpo/MOBILE/jagobisnis/android/app/src/debug/AndroidManifest.xml:6:22-64
+		ADDED from /home/kszxpo/Development/Native/jagobisnis/android/app/src/debug/AndroidManifest.xml:6:22-64
 activity#com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity
-ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:47
+ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:47
 	android:configChanges
-		ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-59
+		ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-59
 	android:theme
-		ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-44
+		ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-44
 	android:name
-		ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-102
+		ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-102
 activity#com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ChromeCustomTabsActivity
-ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-15:55
+ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-15:55
 	android:configChanges
-		ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-59
+		ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-59
 	android:theme
-		ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-52
+		ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-52
 	android:name
-		ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-110
+		ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-110
 receiver#com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ActionBroadcastReceiver
-ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-118
+ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-118
 	android:name
-		ADDED from [:flutter_inappwebview] /home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:17:19-115
+		ADDED from [:flutter_inappwebview] /home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/library_manifest/debug/AndroidManifest.xml:17:19-115
 activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+ADDED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
 	android:exported
-		ADDED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+		ADDED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
 	android:theme
-		ADDED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+		ADDED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
 	android:name
-		ADDED from [:url_launcher] /home/kszxpo/MOBILE/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+		ADDED from [:url_launcher] /home/kszxpo/Development/Native/jagobisnis/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74

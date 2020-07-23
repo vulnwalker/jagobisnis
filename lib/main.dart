@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:jagobisnis/pages/memberShipPage.dart';
 import 'package:jagobisnis/pages/profilePage.dart';
 import 'package:jagobisnis/pages/trainingPage.dart';
+import 'package:jagobisnis/pages/updateProfilePage.dart';
 import 'package:jagobisnis/pages/youtube.dart';
 
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         "login": (BuildContext context) => LoginPage(),
         "dashboardPage": (BuildContext context) => MainPage(),
         "profile": (BuildContext context) => Profile(),
+        "updateProfile": (BuildContext context) => UpdateProfile(),
         "membership": (BuildContext context) => MemberShip(),
         "trainingPage": (BuildContext context) => TrainingPage(),
         "youtube": (BuildContext context) => VideoScreen(),
