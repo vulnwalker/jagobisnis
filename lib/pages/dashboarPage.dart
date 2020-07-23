@@ -14,6 +14,7 @@ import 'package:jagobisnis/common/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:url_launcher/url_launcher.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MainPage extends StatefulWidget {
   BuildContext context;
@@ -40,6 +41,8 @@ class MainPageState extends State<MainPage> {
   final Color color2 = Colors.blue.shade200;
   final Color color3 = Colors.blue.shade400;
   final Color color4 = Colors.blueGrey;
+  YoutubePlayerController _controller;
+
   Future<String> getSession() async {
     prefs = await SharedPreferences.getInstance();
     return await http.post(configClass.memberCommision(), body: {"email" : prefs.getString('sessionEmail').toString()}).then((response) {
@@ -53,6 +56,15 @@ class MainPageState extends State<MainPage> {
     (() async {
         //  await getDataAccount();
         prefs = await SharedPreferences.getInstance();
+        String idVideo = YoutubePlayer.convertUrlToId("https://www.youtube.com/watch?v=3pIPQhbdHKI&feature=youtu.be");
+        _controller = YoutubePlayerController(
+          initialVideoId: idVideo,
+          flags: YoutubePlayerFlags(
+            mute: false,
+            autoPlay: true,
+          ),
+        );
+
         setState(() {
         });
     })();
@@ -100,54 +112,7 @@ class MainPageState extends State<MainPage> {
   }
 
 
-  Widget _buildBottomBar() {
-    return BottomNavigationBar(
-      selectedItemColor: Colors.grey.shade800,
-      unselectedItemColor: Colors.grey,
-      currentIndex: 0,
-      onTap: (i) {},
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          title: Text("Home"),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person_add),
-          title: Text("Refer"),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.history),
-          title: Text("History"),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person_outline),
-          title: Text("Profile"),
-        ),
-      ],
-    );
-  }
-  Container _buildTitledContainer(String title, {Widget child, double height}) {
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      width: double.infinity,
-      height: height,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: Colors.white,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            title,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),
-          ),
-          child
-          // if (child != null) ...[const SizedBox(height: 10.0), child]
-        ],
-      ),
-    );
-  }
+  
   Widget _buildBody(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
@@ -155,7 +120,6 @@ class MainPageState extends State<MainPage> {
         children: <Widget>[
           _buildHeader(),
           const SizedBox(height: 20.0),
-          
           Container(
                 margin: EdgeInsets.fromLTRB(16.0, 0,16.0,8.0),
                 decoration: BoxDecoration(
@@ -163,48 +127,102 @@ class MainPageState extends State<MainPage> {
                   borderRadius: BorderRadius.circular(5.0)
                 ),
                 padding: const EdgeInsets.all(16.0),
-                child: Row(
+                child: YoutubePlayer(
+                          controller: _controller,
+                          showVideoProgressIndicator: true,
+                          onReady: () {
+                            print('Player is ready. ');
+                          },
+                        ),
+          ),
+          Container(
+                margin: EdgeInsets.fromLTRB(16.0, 0,16.0,8.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5.0)
+                ),
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.fromLTRB(4.0, 0,4.0,16.0),
                       decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(5.0)
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8.0,right: 8.0),
-                        child: 
-                                OutlineButton(
+                        child: OutlineButton(
                                   color: Colors.green,
                                   textColor: Colors.white,
                                   borderSide: BorderSide(color: Colors.white),
-                                  child: Text("WhatsApp".toUpperCase()),
+                                  child:
+                                   Text("\t\t\t\t\t\t\t\t\t\t\Join Grup Whatsapp\t\t\t\t\t\t\t\t\t\t ".toUpperCase(),
+                                  //  textAlign: TextAlign.center
+                                   ),
                                   onPressed: () {
-                                    launch("https://chat.whatsapp.com/LSWFZ61tywe5OVsLLdjpSu");
+                                    launch("https://api.whatsapp.com/send?phone=6287774305454&text=Saya%20mau%20join%20grup%20Jago%20Bisnis");
                                   },
                                 ),
                       ),
                     ),
+                    const SizedBox(height: 10.0),
                     Container(
-                      margin: EdgeInsets.fromLTRB(35.0, 0,4.0,16.0),
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(5.0)
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8.0,right: 8.0),
-                        child: 
-                                OutlineButton(
+                        child:  OutlineButton(
                                   color: Colors.white,
                                   textColor: Colors.white,
                                   borderSide: BorderSide(color: Colors.white),
-                                  child: Text("Telegram".toUpperCase()),
+                                  child: Text("Join Channel Telegram".toUpperCase()),
                                   onPressed: () {
                                     launch("https://t.me/joinchat/AAAAAE1TD47ROqNAV5Gd1w");
                                   },
-                                ),
+                              ),
                       ),
                     ),
+                    const SizedBox(height: 10.0),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(5.0)
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                        child:  OutlineButton(
+                                  color: Colors.white,
+                                  textColor: Colors.white,
+                                  borderSide: BorderSide(color: Colors.white),
+                                  child: Text("Join Channel Youtube".toUpperCase()),
+                                  onPressed: () {
+                                    launch("https://www.youtube.com/channel/UCDpVtldFqJ2paszK6n1v34g");
+                                  },
+                              ),
+                      ),
+                    ),
+                    // Container(
+                    //   margin: EdgeInsets.fromLTRB(35.0, 0,4.0,16.0),
+                    //   decoration: BoxDecoration(
+                    //     color: Colors.blue,
+                    //     borderRadius: BorderRadius.circular(5.0)
+                    //   ),
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                    //     child: 
+                                // OutlineButton(
+                                //   color: Colors.white,
+                                //   textColor: Colors.white,
+                                //   borderSide: BorderSide(color: Colors.white),
+                                //   child: Text("Telegram".toUpperCase()),
+                                //   onPressed: () {
+                                //     launch("https://t.me/joinchat/AAAAAE1TD47ROqNAV5Gd1w");
+                                //   },
+                                // ),
+                    //   ),
+                    // ),
                     // Container(
                     //   margin: EdgeInsets.fromLTRB(4.0, 0,4.0,16.0),
                     //   decoration: BoxDecoration(

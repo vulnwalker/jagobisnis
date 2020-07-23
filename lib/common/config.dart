@@ -9,7 +9,8 @@ class ConfigClass {
     return this.hostName;
   }
   String auth(){
-    return getHostName()+"auth";
+    // return getHostName()+"auth";
+    return getHostName()+"auth/wordpress";
   }
   String syncData(){
     return getHostName()+"member/info";
@@ -36,10 +37,12 @@ class ConfigClass {
     return getHostName()+"chapter";
   }
   String register(){
-    return getHostName()+"member/add";
+    // return getHostName()+"member/add";
+    return getHostName()+"member/addWordPress";
   }
   String profile(){
-    return getHostName()+"member/sync";
+    // return getHostName()+"member/sync";
+    return getHostName()+"member/syncWordPress";
   }
   String getProvinsi(){
     return getHostName()+"ongkir/getProvinsi";

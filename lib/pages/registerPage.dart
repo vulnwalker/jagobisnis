@@ -205,8 +205,10 @@ class RegisterPage extends StatelessWidget {
                         "kota": _kotaController.text,
                         "referalEmail": _referalEmail.text,
                       }).then((response) async {
+          print(response.body.toString());
+
                         configClass.closeLoading(context);
-                    
+
                         final jsonResponse = JSON.jsonDecode(response.body.toString());
           String loginResponse ;
           // Resp resp = new Resp.fromJson(jsonResponse);
@@ -215,7 +217,6 @@ class RegisterPage extends StatelessWidget {
           List dataContent;
           String err,cek;
           dataResult = extractdata["result"];
-          print(response.body.toString());
           
 
           if(dataResult[0]["err"] == ''){
@@ -243,7 +244,7 @@ class RegisterPage extends StatelessWidget {
                     print("Welcome "+ dataResult[0]["content"]["nama"].toString());
                     SharedPreferences prefs = await SharedPreferences.getInstance();
                           prefs.setString('sessionEmail',_emailController.text);
-                          prefs.setString('sessionNama',_emailController.text);
+                          prefs.setString('sessionNama',dataResult[0]["content"]["nama"]);
                     Navigator.push(
                     context, MaterialPageRoute(builder: (context) => MainPage()));
 
