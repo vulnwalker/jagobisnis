@@ -34,8 +34,10 @@ class ConfigClass {
     return getHostName()+"training";
   }
   String trainingListChapter(){
-    return getHostName()+"chapter";
+    // return getHostName()+"chapter";
+    return getHostName()+"chapter/wordpress";
   }
+  // }
   String register(){
     // return getHostName()+"member/add";
     return getHostName()+"member/addWordPress";

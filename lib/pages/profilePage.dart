@@ -377,11 +377,11 @@ class ProfileState extends State<Profile> {
                         title: Text("Phone"),
                         subtitle: Text(teleponMember),
                       ),
-                      ListTile(
-                        leading: Icon(Icons.local_atm),
-                        title: Text("Bank"),
-                        subtitle: Text(nama_bank + " " +nomor_rekening + " a/n "+ nama_rekening),
-                      ),
+                      // ListTile(
+                      //   leading: Icon(Icons.local_atm),
+                      //   title: Text("Bank"),
+                      //   subtitle: Text(nama_bank + " " +nomor_rekening + " a/n "+ nama_rekening),
+                      // ),
                       ListTile(
                         leading: Icon(Icons.group),
                         title: Text("Referal"),
@@ -443,7 +443,7 @@ class ProfileState extends State<Profile> {
               },
             ),
 
-        showFAB: true,
+        showFAB: false,
         showDrawer: true,
         floatingIcon: Icons.edit,
         eventFloatButton: (){

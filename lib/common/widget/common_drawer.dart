@@ -129,8 +129,8 @@ class CommonDrawer extends StatelessWidget {
                             colors: [Colors.orange, Colors.deepOrange])),
                     child: CircleAvatar(
                       radius: 40,
-                      // backgroundImage: NetworkImage(prefs.getString('sessionGambar').toString()),
-                      backgroundImage: NetworkImage("http://member.jagobisnis.info/assets/images/profile/zackzack.png"),
+                      backgroundImage: NetworkImage(prefs.getString('sessionGambar').toString()),
+                      // backgroundImage: NetworkImage("http://member.jagobisnis.info/assets/images/profile/zackzack.png"),
          
                       // backgroundImage: CachedNetworkImageProvider(image),
                     ),
