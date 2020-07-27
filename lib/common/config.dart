@@ -28,7 +28,8 @@ class ConfigClass {
     return getHostName()+"copyWriting";
   }
   String leadList(){
-    return getHostName()+"leads";
+    // return getHostName()+"leads";
+    return getHostName()+"leads/wordpress";
   }
   String trainingList(){
     return getHostName()+"training";

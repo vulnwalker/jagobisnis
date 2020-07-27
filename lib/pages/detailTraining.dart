@@ -1,5 +1,5 @@
 
-import 'package:fijkplayer/fijkplayer.dart';
+// import 'package:fijkplayer/fijkplayer.dart';
 import 'package:flutter/material.dart';
 import 'package:jagobisnis/common/assets.dart';
 import 'package:jagobisnis/common/config.dart';
@@ -40,8 +40,8 @@ class DetailTrainingPageState extends State<DetailTrainingPage> {
   final Color color2 = Colors.blue.shade200;
   final Color color3 = Colors.blue.shade400;
   final Color color4 = Colors.blueGrey;
-  final FijkPlayer player = FijkPlayer(
-  );
+  // final FijkPlayer player = FijkPlayer(
+  // );
   YoutubePlayerController _controller;
   
   @override

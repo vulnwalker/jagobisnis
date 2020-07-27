@@ -27,7 +27,7 @@ dependencies:
   progress_hud: "^1.1.0"
   shared_preferences: ^0.5.6+3
   sqflite: "^1.2.1"
-  share: 0.5.3
+  # share: 0.5.3
   http: any 
   cached_network_image: ^2.0.0
   flutter_custom_clippers: ^1.1.1
@@ -41,7 +41,7 @@ dependencies:
   url_launcher: ^5.4.2
   intl: ">=0.14.0"  
   youtube_player_flutter: ^7.0.0+7 
-  fijkplayer: ^0.8.7
+  # fijkplayer: ^0.8.7
 
 
 

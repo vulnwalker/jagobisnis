@@ -1,5 +1,6 @@
 import 'package:jagobisnis/common/CheckRoute.dart';
 import 'package:jagobisnis/pages/dashboarPage.dart';
+import 'package:jagobisnis/pages/leadPage.dart';
 
 import 'package:jagobisnis/pages/loginPage.dart';
 import 'package:flutter/material.dart';
@@ -35,12 +36,12 @@ class MyApp extends StatelessWidget {
         "updateProfile": (BuildContext context) => UpdateProfile(),
         "membership": (BuildContext context) => MemberShip(),
         "trainingPage": (BuildContext context) => TrainingPage(),
+        "leadPage": (BuildContext context) => LeadPage(),
         "youtube": (BuildContext context) => VideoScreen(),
-  
+
         // "welcomePage": (BuildContext context) => WelcomePage(),
         // "produkPage": (BuildContext context) => ProdukPage(),
         // "copyWritingPage": (BuildContext context) => CopyWriting(),
-        // "leadPage": (BuildContext context) => LeadPage(),
         // "kotak": (BuildContext context) => ShoppingWidgets(),
         // "cartPage": (BuildContext context) => CartPage(),
         // "checkoutPage": (BuildContext context) => CheckoutPage(),
