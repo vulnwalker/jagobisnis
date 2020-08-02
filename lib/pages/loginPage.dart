@@ -248,7 +248,6 @@ class LoginPage extends StatelessWidget {
         }
         configClass.closeLoading(publicContext);
         Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
-        // getKontak();
       } else {
         _customAlertDialog(publicContext, AlertDialogType.ERROR, "Error ", "Allow Application to Access Contact");
         configClass.closeLoading(publicContext);
@@ -287,31 +286,13 @@ class LoginPage extends StatelessWidget {
         }
         configClass.closeLoading(publicContext);
         Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
-        
-          // getKontak();
       }
     } catch (e) {
       print(e);
     }
   }
 
-  Future<String> getKontak() async {
-        Iterable<Contact> contacts = await ContactsService.getContacts(withThumbnails: false);
-        List<Contact> contactsList = contacts.toList();
-        var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
-        for (int i = 0; i < contactsList.length; i++) {
-          if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
-            dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
-          }
-        }
-        await http.post(configClass.saveKontak(), body: {"dataPost" : jsonEncode(dataPost).toString(), "email" : _emailController.text } ).then((response) { 
-              print(response.body); 
-              return response.body;
-        });
-        configClass.closeLoading(publicContext);
-        Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
-      return "";
-   }
+  
 
   _customAlertDialog(BuildContext context, AlertDialogType type, String titleAlert,String descAlert) {
     showDialog(

