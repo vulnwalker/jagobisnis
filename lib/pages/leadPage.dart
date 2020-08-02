@@ -130,7 +130,7 @@ class _LeadPageState extends State<LeadPage> {
         String err,cek;
         dataResult = extractdata["result"];
         List<dynamic> dataContent = dataResult[0]["content"];
-
+        _maxItems = 0;
         for (var i = 0; i < dataContent.length; i++) {
           _maxItems = int.parse(dataContent[i]['maxItem']);
             items.add(Item(

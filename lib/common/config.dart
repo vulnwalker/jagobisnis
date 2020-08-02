@@ -21,6 +21,9 @@ class ConfigClass {
   String produkList(){
     return getHostName()+"produk";
   }
+  String arsipKulWA(){
+    return getHostName()+"arsip";
+  }
   String produkDetail(){
     return getHostName()+"produk/detail";
   }

@@ -1,4 +1,5 @@
 import 'package:jagobisnis/common/CheckRoute.dart';
+import 'package:jagobisnis/pages/arsipPage.dart';
 import 'package:jagobisnis/pages/dashboarPage.dart';
 import 'package:jagobisnis/pages/leadPage.dart';
 
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         "membership": (BuildContext context) => MemberShip(),
         "trainingPage": (BuildContext context) => TrainingPage(),
         "leadPage": (BuildContext context) => LeadPage(),
+        "arsipPage": (BuildContext context) => ArsipPage(),
         "youtube": (BuildContext context) => VideoScreen(),
 
         // "welcomePage": (BuildContext context) => WelcomePage(),
