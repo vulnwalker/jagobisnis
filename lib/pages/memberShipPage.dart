@@ -37,6 +37,7 @@ class MemberShipState extends State<MemberShip> {
   String teamOmset = "0";
   String teamProfit = "0";
   String totalProfit = "0";
+  String totalLeads = "0";
   ConfigClass configClass = new ConfigClass();
   var databaseHelper = new  DatabaseHelper() ;
 
@@ -178,39 +179,56 @@ Container _buildTile(
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(
-                height: 5.0,
-              ),
-              Text(
-                "Progres to Premium",
-                style: TextStyle(
-                    fontSize: 20.0, fontWeight: FontWeight.w700, color: Colors.black),
-              ),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: <Widget>[
+          //     SizedBox(
+          //       height: 5.0,
+          //     ),
+          //     Text(
+          //       "Progres to Premium",
+          //       style: TextStyle(
+          //           fontSize: 20.0, fontWeight: FontWeight.w700, color: Colors.black),
+          //     ),
               
-            ],
-          ),
-          RoundedProgressBar(
-              childLeft: Text(""+persenToPremium.toString()+"%",
-                  style: TextStyle(color: Colors.black)),
-              percent: persenToPremium,
-              theme: RoundedProgressBarTheme.yellow
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(
-                height: 5.0,
-              ),
-              Text(
-                jumlahBarangTerjual.toString()+" / 15 Barang",
-                style: TextStyle(
-                    fontSize: 20.0, fontWeight: FontWeight.w700, color: Colors.black),
-              ),
+          //   ],
+          // ),
+          // RoundedProgressBar(
+          //     childLeft: Text(""+persenToPremium.toString()+"%",
+          //         style: TextStyle(color: Colors.black)),
+          //     percent: persenToPremium,
+          //     theme: RoundedProgressBarTheme.yellow
+          // ),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: <Widget>[
+          //     SizedBox(
+          //       height: 5.0,
+          //     ),
+          //     Text(
+          //       jumlahBarangTerjual.toString()+" / 15 Barang",
+          //       style: TextStyle(
+          //           fontSize: 20.0, fontWeight: FontWeight.w700, color: Colors.black),
+          //     ),
               
-            ],
+          //   ],
+          // ),
+          CommonDivider(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 3,
+                  child: _buildTile(
+                    color: Colors.grey,
+                    icon: Icons.group,
+                    title: "Total Member / Leads",
+                    data: totalLeads,
+                  ),
+                ),
+              ],
+            ),
           ),
           CommonDivider(),
           Padding(
@@ -344,6 +362,7 @@ Container _buildTile(
                     teamOmset =  dataResult[0]["content"][0]['omset_referal'].toString();
                     jumlahBarangTerjual =  int.parse(dataResult[0]["content"][0]['jumlah_barang_terjual']);
                     totalProfit =  dataResult[0]["content"][0]['totalProfit'];
+                    totalLeads =  dataResult[0]["content"][0]['totalLeads'];
                     persenToPremium =  double.parse(dataResult[0]["content"][0]['persenToPremium']);
 
                   // tampilkan dvarata

@@ -181,6 +181,8 @@ class TrainingPage extends StatelessWidget {
                 listMateri.add(
                   GestureDetector(
                       onTap: (){
+                        var codec = latin1.fuse(base64);
+
                         Navigator.push(
                                 publicContext,
                         new MaterialPageRoute(
@@ -188,7 +190,8 @@ class TrainingPage extends StatelessWidget {
                               new DetailTrainingPage(
                                 materiContent[ab]["id"],
                                 materiContent[ab]["judul_materi"],
-                                stringToBase64.decode(materiContent[ab]["deskripsi_materi"].toString()),
+                                // stringToBase64.decode(materiContent[ab]["deskripsi_materi"].toString()),
+                                codec.decode(materiContent[ab]["deskripsi_materi"].toString()),
                                 materiContent[ab]["video_souce"],
                                 materiContent[ab]["thumbnail"],
                                 materiContent[ab]["durasi_video"],
@@ -289,21 +292,21 @@ class TrainingPage extends StatelessWidget {
                 children: listWidget 
               ),
             ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
+            // Positioned(
+            //   bottom: 0,
+            //   left: 0,
+            //   right: 0,
 
-              child: TextField(
-                decoration: InputDecoration(
-                  fillColor: Colors.black87,
-                  suffixIcon: Icon(Icons.search, color: Colors.white70,),
-                  filled: true,
-                  hintText: "Cari materi",
-                  hintStyle: TextStyle(color: Colors.white70)
-                ),
-              ),
-            )
+            //   child: TextField(
+            //     decoration: InputDecoration(
+            //       fillColor: Colors.black87,
+            //       suffixIcon: Icon(Icons.search, color: Colors.white70,),
+            //       filled: true,
+            //       hintText: "Cari materi",
+            //       hintStyle: TextStyle(color: Colors.white70)
+            //     ),
+            //   ),
+            // )
           ],
         );
    }

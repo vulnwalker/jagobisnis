@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:jagobisnis/common/config.dart';
 import 'package:jagobisnis/common/toast/alert_dialog.dart';
@@ -347,6 +348,8 @@ class ItemCard extends StatelessWidget {
               ),
             ),
             onTap: (){
+                        var codec = latin1.fuse(base64);
+                        // print(codec.decode(item.deskripsi));
                         Navigator.push(
                                 context,
                         new MaterialPageRoute(
@@ -355,12 +358,13 @@ class ItemCard extends StatelessWidget {
                                 item.id_materi,
                                 item.tanggal,
                                 item.judul_materi,
-                                stringToBase64.decode(item.deskripsi.toString()),
-                                // "ini asdkasldjsalkhd ksadsadasdasd",
+                                // stringToBase64.decode(item.deskripsi.toString()),
+                                codec.decode(item.deskripsi),
                                 item.pemateri,
                                 item.status,
                                 ),
                         ));
+                        
                 
                       },
     );

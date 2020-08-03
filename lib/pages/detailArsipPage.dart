@@ -142,8 +142,12 @@ class DetailArsipPageState extends State<DetailArsipPage> {
                           fontSize: 30.0
                         ),),
                         SizedBox(height: 20.0),
-                        Text(widget.deskripsiMateri, style: TextStyle(color: Colors.white70),),
-                      
+                        Text(widget.deskripsiMateri, style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15.0
+                          ),
+                        )
                       ],
                     ),
                   )
