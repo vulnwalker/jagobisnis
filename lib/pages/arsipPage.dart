@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:jagobisnis/common/config.dart';
 import 'package:jagobisnis/common/toast/alert_dialog.dart';
 import 'package:jagobisnis/database/DatabaseHelper.dart';
@@ -5,6 +7,8 @@ import 'package:jagobisnis/common/widget/common_scaffold.dart';
 
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:jagobisnis/pages/detailArsipPage.dart';
+import 'package:jagobisnis/pages/detailTraining.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -228,13 +232,14 @@ class ItemCard extends StatelessWidget {
   }) : super(key: key);
 
   final Item item;
-
+  
   @override
   Widget build(BuildContext context) {
   Size deviceSize = MediaQuery.of(context).size;
   TextStyle whiteText = TextStyle(color: Colors.white);
   final primary = Color(0xff696b9e);
   var warnaStatus ;
+  Codec<String, String> stringToBase64 = utf8.fuse(base64);
   const Color profile_info_background = Color(0xFF3775FD);
   const Color profile_info_categories_background = Color(0xFFF6F5F8);
   const Color profile_info_address = Color(0xFF8D7AEE);
@@ -341,9 +346,23 @@ class ItemCard extends StatelessWidget {
                 ],
               ),
             ),
-      // onTap: () => Navigator.of(context).push(
-        // MaterialPageRoute(builder: (context) => ItemDetailsPage(item)),
-      // ),
+            onTap: (){
+                        Navigator.push(
+                                context,
+                        new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              new DetailArsipPage(
+                                item.id_materi,
+                                item.tanggal,
+                                item.judul_materi,
+                                stringToBase64.decode(item.deskripsi.toString()),
+                                // "ini asdkasldjsalkhd ksadsadasdasd",
+                                item.pemateri,
+                                item.status,
+                                ),
+                        ));
+                
+                      },
     );
   }
 }

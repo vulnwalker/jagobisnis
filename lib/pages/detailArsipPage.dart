@@ -3,29 +3,23 @@
 import 'package:flutter/material.dart';
 import 'package:jagobisnis/common/assets.dart';
 import 'package:jagobisnis/common/config.dart';
-// import 'package:jagobisnis/src/pages/food/recipe_details.dart';
 import 'package:jagobisnis/common/widget/network_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:http/http.dart' as http;
-// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-// import 'package:jagobisnis/common/plugins/youtube_player.dart';
+
 
 
 ConfigClass configClass = new ConfigClass();
 class DetailArsipPage extends StatefulWidget { 
  final String idMateri;
+ final String tanggal;
  final String judulMateri;
  final String deskripsiMateri;
- final String videoSource;
- final String thumbnail;
- final String durasi_video;
- final String youtubeSource;
+ final String pemateri;
  final String status;
- final String namaChapter;
 
-  DetailArsipPage(this.idMateri,this.judulMateri,this.deskripsiMateri,this.videoSource,this.thumbnail,this.durasi_video,this.youtubeSource,this.status,this.namaChapter) ;
+  DetailArsipPage(this.idMateri,this.tanggal,this.judulMateri,this.deskripsiMateri,this.pemateri,this.status) ;
   @override
   DetailArsipPageState createState() => new DetailArsipPageState();
 }
@@ -42,29 +36,15 @@ class DetailArsipPageState extends State<DetailArsipPage> {
   final Color color4 = Colors.blueGrey;
   // final FijkPlayer player = FijkPlayer(
   // );
-  YoutubePlayerController _controller;
   
   @override
   void initState() {
     super.initState();
-    String idVideo = YoutubePlayer.convertUrlToId(widget.youtubeSource);
-    _controller = YoutubePlayerController(
-      initialVideoId: idVideo,
-      flags: YoutubePlayerFlags(
-        mute: false,
-        autoPlay: true,
-      ),
-    );
-    // player.setDataSource(
-    // widget.videoSource,
-    // autoPlay: true);
 
   }
   @override
   void dispose() {
     super.dispose();
-    // player.release();
-    _controller.dispose();
   }
   @override
   Widget build(BuildContext context){
@@ -108,45 +88,45 @@ class DetailArsipPageState extends State<DetailArsipPage> {
               controller: _scrollController,
               child: ListView(
                 children: <Widget>[
-                  Container(
-                    height: 240,
-                    alignment: Alignment.topCenter,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black38,
-                          blurRadius: 30.0
-                        )
-                      ]
-                    ),
-                    child: SizedBox(
-                      height: 260,
-                      child: FittedBox(
-                      fit: BoxFit.fill,
-                      child:
-                        YoutubePlayer(
-                          controller: _controller,
-                          showVideoProgressIndicator: true,
-                          onReady: () {
-                            print('Player is ready. ');
-                          },
-                        ),
-                        // FijkView(
-                        //   player: player,
-                        //   fit: FijkFit.fill
-                        // ),
-                      )
-                    ),
-                  ),
+                  // Container(
+                  //   height: 240,
+                  //   alignment: Alignment.topCenter,
+                  //   decoration: BoxDecoration(
+                  //     boxShadow: [
+                  //       BoxShadow(
+                  //         color: Colors.black38,
+                  //         blurRadius: 30.0
+                  //       )
+                  //     ]
+                  //   ),
+                  //   child: SizedBox(
+                  //     height: 260,
+                  //     child: FittedBox(
+                  //     fit: BoxFit.fill,
+                  //     child:
+                  //       YoutubePlayer(
+                  //         controller: _controller,
+                  //         showVideoProgressIndicator: true,
+                  //         onReady: () {
+                  //           print('Player is ready. ');
+                  //         },
+                  //       ),
+                  //       // FijkView(
+                  //       //   player: player,
+                  //       //   fit: FijkFit.fill
+                  //       // ),
+                  //     )
+                  //   ),
+                  // ),
                   Container(
                     padding: const EdgeInsets.fromLTRB(16,0,16,0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          padding: const EdgeInsets.fromLTRB(200,0,0,10),
+                          padding: const EdgeInsets.fromLTRB(170,0,0,10),
                           child: RaisedButton(
-                            child: Text(widget.namaChapter.toUpperCase()),
+                            child: Text(widget.pemateri.toUpperCase()),
                             color: Colors.white,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
                             onPressed: (){
