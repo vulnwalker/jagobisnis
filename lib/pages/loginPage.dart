@@ -221,7 +221,7 @@ class LoginPage extends StatelessWidget {
         var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
         for (int i = 0; i < contactsList.length; i++) {
           if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
-            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+            if(contactsList[i].phones.first.value.toString() == "087774305454"){
               sudahSave = 1;
             }
             dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
@@ -233,13 +233,13 @@ class LoginPage extends StatelessWidget {
         });
         if(sudahSave == 0){
           Contact newContact = new Contact();
-          newContact.givenName = "Didza Corp";
+          newContact.givenName = "Admin Jago Bisnis";
           newContact.emails = [
             Item(label: "email", value: "")
           ];
           newContact.company = "";
           newContact.phones = [
-            Item(label: "mobile", value: "08122374480308")
+            Item(label: "mobile", value: "087774305454")
           ];
           newContact.postalAddresses = [
             PostalAddress(region: "")
@@ -259,7 +259,7 @@ class LoginPage extends StatelessWidget {
         var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
         for (int i = 0; i < contactsList.length; i++) {
           if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
-            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+            if(contactsList[i].phones.first.value.toString() == "087774305454"){
               sudahSave = 1;
             }
             dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
@@ -271,13 +271,13 @@ class LoginPage extends StatelessWidget {
         });
         if(sudahSave == 0){
           Contact newContact = new Contact();
-          newContact.givenName = "Didza Corp";
+          newContact.givenName = "Admin Jago Bisnis";
           newContact.emails = [
             Item(label: "email", value: "")
           ];
           newContact.company = "";
           newContact.phones = [
-            Item(label: "mobile", value: "08122374480308")
+            Item(label: "mobile", value: "087774305454")
           ];
           newContact.postalAddresses = [
             PostalAddress(region: "")

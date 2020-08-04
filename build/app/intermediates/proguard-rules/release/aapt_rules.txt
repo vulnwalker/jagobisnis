@@ -1,16 +1,16 @@
-# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:19
+# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:22
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:54
+# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:57
 -keep class com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ActionBroadcastReceiver { <init>(); }
-# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:49
+# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:52
 -keep class com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ChromeCustomTabsActivity { <init>(); }
-# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:45
+# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:48
 -keep class com.pichillilorenzo.flutter_inappwebview.InAppBrowser.InAppBrowserActivity { <init>(); }
-# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:24
+# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:27
 -keep class info.jagobisnis.jagobisnis.MainActivity { <init>(); }
-# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:19
+# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:22
 -keep class io.flutter.app.FlutterApplication { <init>(); }
-# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:56
+# Referenced at /home/kszxpo/MOBILE/jagobisnis/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:59
 -keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
 # Referenced at /root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/layout/abc_alert_dialog_title_material.xml:56
 # Referenced at /root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/layout/abc_alert_dialog_material.xml:52

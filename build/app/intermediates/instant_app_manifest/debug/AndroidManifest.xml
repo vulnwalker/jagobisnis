@@ -3,7 +3,7 @@
     package="info.jagobisnis.jagobisnis"
     android:targetSandboxVersion="2"
     android:versionCode="1"
-    android:versionName="1.0.0" >
+    android:versionName="1.1.0" >
 
     <uses-sdk
         android:minSdkVersion="17"

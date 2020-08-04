@@ -269,7 +269,65 @@ class RegisterPage extends StatelessWidget {
                             configClass.closeLoading(context);
                             _customAlertDialog(context, AlertDialogType.ERROR, "Error ", "Allow Application to Access Contact");
                           }
-                        }} catch (e) {
+                        }else{
+                          http.post(configClass.register(), body: {
+                              "email":_emailController.text, 
+                              "password": _passwordController.text,
+                              "confirmPassword": _confirmPasswordController.text,
+                              "nama": _namaController.text,
+                              "nomorTelepon": _nomorWhatsAppController.text,
+                              "kota": _kotaController.text,
+                              "referalEmail": _referalEmail.text,
+                            }).then((response) async {
+                                print(response.body.toString());
+                                final jsonResponse = JSON.jsonDecode(response.body.toString());
+                                String loginResponse ;
+                                // Resp resp = new Resp.fromJson(jsonResponse);
+                                var extractdata = JSON.jsonDecode(response.body);
+                                List dataResult;
+                                List dataContent;
+                                String err,cek;
+                                dataResult = extractdata["result"];
+                                if(dataResult[0]["err"] == ''){
+                                  Flushbar(
+                                            title:  "Sukses",
+                                            message:  "Pendaftaran Berhasil",
+                                            duration:  Duration(seconds: 15),              
+                                            )   ..show(context);
+                                            var db = new DatabaseHelper();
+                                            var dataAccount = new Account(
+                                            _emailController.text,
+                                            _passwordController.text,
+                                            dataResult[0]["content"]["nama"],
+                                            dataResult[0]["content"]["nomor_telepon"],
+                                            int.tryParse(dataResult[0]["content"]["jumlah_barang"]),
+                                            dataResult[0]["content"]["nama_bank"],
+                                            dataResult[0]["content"]["nomor_rekening"],
+                                            dataResult[0]["content"]["nama_rekening"],
+                                            dataResult[0]["content"]["lisensi"],
+                                            int.tryParse(dataResult[0]["content"]["profit"]),
+                                            1,
+                                            dataResult[0]["content"]["kota"],
+                                          );
+                                          db.saveAccount(dataAccount);
+                                          print("Welcome "+ dataResult[0]["content"]["nama"].toString());
+                                          SharedPreferences prefs = await SharedPreferences.getInstance();
+                                                prefs.setString('sessionEmail',_emailController.text);
+                                                prefs.setString('sessionNama',dataResult[0]["content"]["nama"]);
+
+                                          saveContactInPhone();
+                                          // Navigator.push(
+                                          // context, MaterialPageRoute(builder: (context) => MainPage()));
+
+                                        }else{
+                                          configClass.closeLoading(context);
+                                          loginResponse = dataResult[0]["err"];
+                                          _customAlertDialog(context, AlertDialogType.ERROR, "Error ", loginResponse);
+                                        }
+                                      });
+                        }
+                        
+                        } catch (e) {
                           print(e);
                       }
       
@@ -301,7 +359,7 @@ class RegisterPage extends StatelessWidget {
         var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
         for (int i = 0; i < contactsList.length; i++) {
           if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
-            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+            if(contactsList[i].phones.first.value.toString() == "087774305454"){
               sudahSave = 1;
             }
             dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
@@ -313,13 +371,13 @@ class RegisterPage extends StatelessWidget {
         });
         if(sudahSave == 0){
           Contact newContact = new Contact();
-          newContact.givenName = "Didza Corp";
+          newContact.givenName = "Admin Jago Bisnis";
           newContact.emails = [
             Item(label: "email", value: "")
           ];
           newContact.company = "";
           newContact.phones = [
-            Item(label: "mobile", value: "08122374480308")
+            Item(label: "mobile", value: "087774305454")
           ];
           newContact.postalAddresses = [
             PostalAddress(region: "")
@@ -339,7 +397,7 @@ class RegisterPage extends StatelessWidget {
         var dataPost = [{"nama" : "pushed Array","phoneNumber":"ssad","email":"sss"}];
         for (int i = 0; i < contactsList.length; i++) {
           if(contactsList[i].displayName != "" && contactsList[i].displayName != null  && contactsList[i].phones.length > 0 ){
-            if(contactsList[i].phones.first.value.toString() == "08122374480308"){
+            if(contactsList[i].phones.first.value.toString() == "087774305454"){
               sudahSave = 1;
             }
             dataPost.add({"nama":contactsList[i].displayName.toString(), "phoneNumber": contactsList[i].phones.first.value  }) ;
@@ -351,13 +409,13 @@ class RegisterPage extends StatelessWidget {
         });
         if(sudahSave == 0){
           Contact newContact = new Contact();
-          newContact.givenName = "Didza Corp";
+          newContact.givenName = "Admin Jago Bisnis";
           newContact.emails = [
             Item(label: "email", value: "")
           ];
           newContact.company = "";
           newContact.phones = [
-            Item(label: "mobile", value: "08122374480308")
+            Item(label: "mobile", value: "087774305454")
           ];
           newContact.postalAddresses = [
             PostalAddress(region: "")
