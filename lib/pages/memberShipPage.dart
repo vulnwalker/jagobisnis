@@ -230,113 +230,113 @@ Container _buildTile(
               ],
             ),
           ),
-          CommonDivider(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: _buildTile(
-                    color: Colors.blue,
-                    icon: Icons.shopping_cart,
-                    title: "Total Order",
-                    data: "0",
-                  ),
-                ),
-                const SizedBox(width: 16.0),
-                Expanded(
-                  child: _buildTile(
-                    color: Colors.lightGreen,
-                    icon: Icons.favorite,
-                    title: "Paid",
-                    data: "0",
-                  ),
-                ),
-                const SizedBox(width: 16.0),
-                Expanded(
-                  child: _buildTile(
-                    color: Colors.redAccent,
-                    icon: Icons.payment,
-                    title: "Unpaid",
-                    data: "0",
-                  ),
-                ),
-              ],
-            ),
-          ),
-           SizedBox(
-              height: 10.0,
-            ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 2,
-                  child: _buildTile(
-                    color: color1,
-                    icon: Icons.portrait,
-                    title: "Personal Omset",
-                    data: personalOmset,
-                  ),
-                ),
-                const SizedBox(width: 16.0),
-                Expanded(
-                  flex: 2,
-                  child: _buildTile(
-                    color: color2,
-                    icon: Icons.portrait,
-                    title: "Personal Profit",
-                    data: personalProfit,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10.0),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 2,
-                  child: _buildTile(
-                    color: Color(0xffd7aa22),
-                    icon: Icons.group,
-                    title: "Team Omset",
-                    data: teamOmset,
-                  ),
-                ),
-                const SizedBox(width: 16.0),
-                Expanded(
-                  flex: 2,
-                  child: _buildTile(
-                    color: Colors.orange,
-                    icon: Icons.group,
-                    title: "Team Profit",
-                    data: teamProfit,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 10.0),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 3,
-                  child: _buildTile(
-                    color: Colors.pink,
-                    icon: Icons.attach_money,
-                    title: "Total Profit",
-                    data: totalProfit,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // CommonDivider(),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          //   child: Row(
+          //     children: <Widget>[
+          //       Expanded(
+          //         child: _buildTile(
+          //           color: Colors.blue,
+          //           icon: Icons.shopping_cart,
+          //           title: "Total Order",
+          //           data: "0",
+          //         ),
+          //       ),
+          //       const SizedBox(width: 16.0),
+          //       Expanded(
+          //         child: _buildTile(
+          //           color: Colors.lightGreen,
+          //           icon: Icons.favorite,
+          //           title: "Paid",
+          //           data: "0",
+          //         ),
+          //       ),
+          //       const SizedBox(width: 16.0),
+          //       Expanded(
+          //         child: _buildTile(
+          //           color: Colors.redAccent,
+          //           icon: Icons.payment,
+          //           title: "Unpaid",
+          //           data: "0",
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          //  SizedBox(
+          //     height: 10.0,
+          //   ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          //   child: Row(
+          //     children: <Widget>[
+          //       Expanded(
+          //         flex: 2,
+          //         child: _buildTile(
+          //           color: color1,
+          //           icon: Icons.portrait,
+          //           title: "Personal Omset",
+          //           data: personalOmset,
+          //         ),
+          //       ),
+          //       const SizedBox(width: 16.0),
+          //       Expanded(
+          //         flex: 2,
+          //         child: _buildTile(
+          //           color: color2,
+          //           icon: Icons.portrait,
+          //           title: "Personal Profit",
+          //           data: personalProfit,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // const SizedBox(height: 10.0),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          //   child: Row(
+          //     children: <Widget>[
+          //       Expanded(
+          //         flex: 2,
+          //         child: _buildTile(
+          //           color: Color(0xffd7aa22),
+          //           icon: Icons.group,
+          //           title: "Team Omset",
+          //           data: teamOmset,
+          //         ),
+          //       ),
+          //       const SizedBox(width: 16.0),
+          //       Expanded(
+          //         flex: 2,
+          //         child: _buildTile(
+          //           color: Colors.orange,
+          //           icon: Icons.group,
+          //           title: "Team Profit",
+          //           data: teamProfit,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          // const SizedBox(height: 10.0),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          //   child: Row(
+          //     children: <Widget>[
+          //       Expanded(
+          //         flex: 3,
+          //         child: _buildTile(
+          //           color: Colors.pink,
+          //           icon: Icons.attach_money,
+          //           title: "Total Profit",
+          //           data: totalProfit,
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );

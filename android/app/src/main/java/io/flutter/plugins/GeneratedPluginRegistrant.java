@@ -16,6 +16,8 @@ public final class GeneratedPluginRegistrant {
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
       flutter.plugins.contactsservice.contactsservice.ContactsServicePlugin.registerWith(shimPluginRegistry.registrarFor("flutter.plugins.contactsservice.contactsservice.ContactsServicePlugin"));
+    flutterEngine.getPlugins().add(new io.flutter.plugins.firebaseadmob.FirebaseAdMobPlugin());
+    flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.core.FlutterFirebaseCorePlugin());
     flutterEngine.getPlugins().add(new com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin());
       com.benzneststudios.flutter_rounded_progress_bar.FlutterRoundedProgressBarPlugin.registerWith(shimPluginRegistry.registrarFor("com.benzneststudios.flutter_rounded_progress_bar.FlutterRoundedProgressBarPlugin"));
     flutterEngine.getPlugins().add(new io.flutter.plugins.pathprovider.PathProviderPlugin());

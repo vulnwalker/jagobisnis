@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:jagobisnis/common/config.dart';
 import 'package:jagobisnis/common/toast/alert_dialog.dart';
 import 'package:jagobisnis/database/DatabaseHelper.dart';
@@ -47,6 +48,22 @@ class _ArsipPageState extends State<ArsipPage> {
   int fromPost = 10;
 
   Size deviceSize;
+  InterstitialAd interstitialAd;
+  InterstitialAd buildInterstitial() {
+    return InterstitialAd(
+        adUnitId: "ca-app-pub-1281561182496486/1296342630",
+        // adUnitId: InterstitialAd.testAdUnitId,
+        listener: (MobileAdEvent event) {
+          if (event == MobileAdEvent.failedToLoad) {
+            interstitialAd..load();
+          } else if (event == MobileAdEvent.closed) {
+            // interstitialAd = buildInterstitial()..load();
+          }else if (event == MobileAdEvent.loaded) {
+            interstitialAd.show();
+          }
+          print(event);
+        });
+  }
    @override
   void initState() {
     super.initState();
@@ -54,7 +71,8 @@ class _ArsipPageState extends State<ArsipPage> {
 
     (() async {
     })();
-    
+    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-1281561182496486~7970573954");
+    interstitialAd = buildInterstitial()..load();
     
   }
 

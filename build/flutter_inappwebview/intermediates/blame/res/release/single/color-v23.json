@@ -1,38 +1,38 @@
 [
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_btn_checkable.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_color_highlight_material.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_spinner.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_edittext.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_edittext.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_btn_colored_text_material.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_color_highlight_material.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_edittext.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_edittext.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_seek_thumb.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_default.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_switch_track.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_switch_track.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_spinner.xml"
     },
     {
-        "merged": "/home/kszxpo/MOBILE/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
-        "source": "/root/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_default.xml"
+        "merged": "/home/kszxpo/Development/Native/jagobisnis/build/flutter_inappwebview/intermediates/res/merged/release/color-v23/abc_tint_switch_track.xml",
+        "source": "/home/kszxpo/.gradle/caches/transforms-2/files-2.1/d8e69336e21c6a428e8a9e9d99518477/appcompat-1.0.0/res/color-v23/abc_tint_switch_track.xml"
     }
 ]

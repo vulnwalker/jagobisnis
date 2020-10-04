@@ -7,7 +7,7 @@ import 'package:jagobisnis/common/widget/network_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:firebase_admob/firebase_admob.dart';
 
 
 ConfigClass configClass = new ConfigClass();
@@ -36,9 +36,30 @@ class DetailArsipPageState extends State<DetailArsipPage> {
   final Color color4 = Colors.blueGrey;
   // final FijkPlayer player = FijkPlayer(
   // );
-  
+
+
+  InterstitialAd interstitialAd;
+  InterstitialAd buildInterstitial() {
+    return InterstitialAd(
+        adUnitId: "ca-app-pub-1281561182496486/1296342630",
+        // adUnitId: InterstitialAd.testAdUnitId,
+        listener: (MobileAdEvent event) {
+          if (event == MobileAdEvent.failedToLoad) {
+            interstitialAd..load();
+          } else if (event == MobileAdEvent.closed) {
+            // interstitialAd = buildInterstitial()..load();
+          }else if (event == MobileAdEvent.loaded) {
+            interstitialAd.show();
+          }
+          print(event);
+        });
+  }
+
+
   @override
   void initState() {
+    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-1281561182496486~7970573954");
+    interstitialAd = buildInterstitial()..load();
     super.initState();
 
   }

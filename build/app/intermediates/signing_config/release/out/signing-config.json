@@ -1,1 +1,1 @@
-{"mName":"release","mStoreFile":"/home/kszxpo/MOBILE/jagobisnis/keystore.jks","mStorePassword":"123456","mKeyAlias":"jagobisnisAliasKey","mKeyPassword":"123456","mStoreType":"pkcs12","mV1SigningEnabled":true,"mV2SigningEnabled":true}
+{"mName":"release","mStoreFile":"/home/kszxpo/Development/Native/jagobisnis/keystore.jks","mStorePassword":"123456","mKeyAlias":"jagobisnisAliasKey","mKeyPassword":"123456","mStoreType":"jks","mV1SigningEnabled":true,"mV2SigningEnabled":true}

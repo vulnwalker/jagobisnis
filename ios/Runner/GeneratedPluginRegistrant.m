@@ -10,6 +10,18 @@
 @import contacts_service;
 #endif
 
+#if __has_include(<firebase_admob/FLTFirebaseAdMobPlugin.h>)
+#import <firebase_admob/FLTFirebaseAdMobPlugin.h>
+#else
+@import firebase_admob;
+#endif
+
+#if __has_include(<firebase_core/FLTFirebaseCorePlugin.h>)
+#import <firebase_core/FLTFirebaseCorePlugin.h>
+#else
+@import firebase_core;
+#endif
+
 #if __has_include(<flutter_inappwebview/InAppWebViewFlutterPlugin.h>)
 #import <flutter_inappwebview/InAppWebViewFlutterPlugin.h>
 #else
@@ -56,6 +68,8 @@
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
   [ContactsServicePlugin registerWithRegistrar:[registry registrarForPlugin:@"ContactsServicePlugin"]];
+  [FLTFirebaseAdMobPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAdMobPlugin"]];
+  [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [InAppWebViewFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"InAppWebViewFlutterPlugin"]];
   [FlutterRoundedProgressBarPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterRoundedProgressBarPlugin"]];
   [FLTPathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTPathProviderPlugin"]];

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:firebase_admob/firebase_admob.dart';
 /**
  * Author: Damodar Lohani
  * profile: https://github.com/lohanidamodar
@@ -46,6 +47,9 @@ class TrainingPage extends StatelessWidget {
     pancake,
   ];
   BuildContext publicContext;
+
+
+
   @override
   Widget build(BuildContext context) {
 
